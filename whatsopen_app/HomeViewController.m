@@ -7,6 +7,8 @@
 //
 
 #import "HomeViewController.h"
+#import "HomeTableViewCell.h"
+#import "DetailViewController.h"
 
 @interface HomeViewController ()
 
@@ -27,12 +29,37 @@
 {
     [super viewDidLoad];
 
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    
+    UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
+    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull to Refresh"];
+    [refresh addTarget:self
+                action:@selector(refreshView:)
+                 forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refresh;
+    
+       
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 }
+
+ -(void)refreshView:(UIRefreshControl *)refresh {
+    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Refreshing data..."];
+   
+      // custom refresh logic would be placed here...
+    
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+       [formatter setDateFormat:@"MMM d, h:mm a"];
+        NSString *lastUpdated = [NSString stringWithFormat:@"Last updated on %@",[formatter stringFromDate:[NSDate date]]];
+        refresh.attributedTitle = [[NSAttributedString alloc] initWithString:lastUpdated];
+         [refresh endRefreshing];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -58,13 +85,42 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    //static NSString *CellIdentifier = @"Cell";
+   // UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+//    if (cell == nil) {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+//    }
+    
+    NSString *nibTitle = @"HomeTableViewCell";
+    
+    
+    static NSString *CellIdentifier = @"HomeTableViewCell";
+    
+    HomeTableViewCell *cell = (HomeTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:nibTitle owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+        [cell setSelectionStyle:UITableViewCellSelectionStyleGray];
     }
     
-    // Configure the cell...
+//    ShopElements *_shopElement = nil;
+//    
+//    if (tableView == shopTableView) {
+//        _shopElement = [self.tableDataSource objectAtIndex:indexPath.row];
+//    } else {
+//        _shopElement = [self.filteredListContent objectAtIndex:indexPath.row];
+//    }
+//    if ([_shopElement isKindOfClass:[NSString class]]) {
+//        cell.textLabel.text = [NSString stringWithFormat:@"Search for \"%@\"", searchBar.text];
+//    } else {
+//        
+//        NSURL *url = [NSURL URLWithString:_shopElement.categoryThumbnailUrl];
+//        cell.categoryImage.imageURL = url;
+//        cell.categoryText.text = _shopElement.categoryTitle;
+//    }
+   
     
     return cell;
 }
@@ -113,12 +169,14 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
+    
+    DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
+    
+     
      // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+          
+    [self.navigationController pushViewController:detailViewController animated:YES];
+
 }
 
 @end

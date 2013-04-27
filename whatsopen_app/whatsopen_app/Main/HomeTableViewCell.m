@@ -7,8 +7,9 @@
 //
 
 #import "HomeTableViewCell.h"
+#import "HomeViewController.h"
 
-@implementation HomeTableCell
+@implementation HomeTableViewCell
 @synthesize mainImage;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier

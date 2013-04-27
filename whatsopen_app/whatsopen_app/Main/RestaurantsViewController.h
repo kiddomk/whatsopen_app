@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RestaurantsViewController : UITableViewController
+@interface RestaurantsViewController : UIViewController
 
 @end

@@ -1,5 +1,5 @@
 //
-//  HomeTableCell.h
+//  DetailViewController.h
 //  whatsopen_app
 //
 //  Created by Jun Seki on 27/04/2013.
@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HomeTableViewCell : UITableViewCell
+@interface DetailViewController : UIViewController
 
-@property (nonatomic, retain) IBOutlet UIImageView *mainImage;
 @end
