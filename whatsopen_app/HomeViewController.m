@@ -7,8 +7,9 @@
 //
 
 #import "HomeViewController.h"
-#import "HomeTableViewCell.h"
+#import "StoreTableCell.h"
 #import "DetailViewController.h"
+#import "AsyncImageView.h"
 
 @interface HomeViewController ()
 
@@ -115,25 +116,93 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    NSString *nibTitle = @"HomeTableViewCell";
+    NSString *nibTitle = @"StoreTableCell";
     
     
-    static NSString *CellIdentifier = @"HomeTableViewCell";
+    static NSString *CellIdentifier = @"StoreTableCell";
     
-    HomeTableViewCell *cell = (HomeTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    StoreTableCell *cell = (StoreTableCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
     
     if (cell == nil) {
         
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:nibTitle owner:self options:nil];
         cell = [nib objectAtIndex:0];
-        [cell setSelectionStyle:UITableViewCellSelectionStyleGray];
+        cell.selectionStyle = UITableViewCellSelectionStyleGray;
+    } else {
+        //cancel loading previous image for cell
+        [[AsyncImageLoader sharedLoader] cancelLoadingImagesForTarget:cell.imageView];
     }
-    
     StoreElements *_storeElements = [self.storeArray objectAtIndex:indexPath.row];
     cell.storeName.text = _storeElements.Name;
     cell.storeAddress.text = _storeElements.Address;
     cell.storeDistance.text = [NSString stringWithFormat:@"%@ %@", [distanceArray objectAtIndex:indexPath.row], @"miles"];
+    NSURL *url = [NSURL URLWithString:_storeElements.PictureUrl];
+    cell.imageView.imageURL=url;
+    
+    
+    
     return cell;
+}
+
+
+
+-(void)customLabelWithName:(NSString *)nameString
+           withVenueType:(NSString *)venueTypeString
+           withClosingTime:(NSString *)closingTimeString
+                   withDistance:(NSString *)distanceString
+                withRating:(NSString *)ratingString
+                     onCell:(StoreTableCell *)cell
+{
+        /*name label */
+        UILabel *nameLabel;
+        nameLabel=[[UILabel alloc]initWithFrame:CGRectMake(14, 230, 320, 40)];
+        [nameLabel setFont:[UIFont systemFontOfSize:35]];
+        [nameLabel setTextColor:[UIColor whiteColor]];
+        [nameLabel setBackgroundColor:[UIColor clearColor]];
+        [nameLabel setTextAlignment:NSTextAlignmentLeft];
+        nameLabel.text=nameString;
+        [cell addSubview:nameLabel];
+    
+    /*venueType label */
+    UILabel *venueTypeLabel;
+    venueTypeLabel=[[UILabel alloc]initWithFrame:CGRectMake(14, 250, 100, 10)];
+    [venueTypeLabel setFont:[UIFont systemFontOfSize:15]];
+    [venueTypeLabel setTextColor:[UIColor whiteColor]];
+    [venueTypeLabel setBackgroundColor:[UIColor clearColor]];
+    [venueTypeLabel setTextAlignment:NSTextAlignmentLeft];
+    venueTypeLabel.text=venueTypeString;
+    [cell addSubview:venueTypeLabel];
+    
+    /*venueType label */
+    UILabel *closingTimeLabel;
+    closingTimeLabel=[[UILabel alloc]initWithFrame:CGRectMake(240, 81, 127, 25)];
+    [closingTimeLabel setFont:[UIFont systemFontOfSize:18]];
+    [closingTimeLabel setTextColor:[UIColor whiteColor]];
+    [closingTimeLabel setBackgroundColor:[UIColor clearColor]];
+    [closingTimeLabel setTextAlignment:NSTextAlignmentRight];
+    closingTimeLabel.text=closingTimeString;
+    [cell addSubview:closingTimeLabel];
+    
+    /*distance label */
+    UILabel *distanceLabel;
+    distanceLabel=[[UILabel alloc]initWithFrame:CGRectMake(240, 102, 127, 25)];
+    [distanceLabel setFont:[UIFont systemFontOfSize:18]];
+    [distanceLabel setTextColor:[UIColor whiteColor]];
+    [distanceLabel setBackgroundColor:[UIColor clearColor]];
+    [distanceLabel setTextAlignment:NSTextAlignmentRight];
+    distanceLabel.text=distanceString;
+    [cell addSubview:distanceLabel];
+    
+    /*rating label */
+    UILabel *ratingLabel;
+    ratingLabel=[[UILabel alloc]initWithFrame:CGRectMake(240, 250, 127, 25)];
+    [ratingLabel setFont:[UIFont systemFontOfSize:18]];
+    [ratingLabel setTextColor:[UIColor whiteColor]];
+    [ratingLabel setBackgroundColor:[UIColor clearColor]];
+    [ratingLabel setTextAlignment:NSTextAlignmentRight];
+    ratingLabel.text=ratingString;
+    [cell addSubview:ratingLabel];
 }
 
 

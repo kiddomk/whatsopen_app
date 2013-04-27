@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "AsyncImageView.h"
 
 #define METERS_PER_MILE 1609.344
 
@@ -20,7 +21,7 @@
 @synthesize storeElements;
 @synthesize address, address2, city, county, postCode;
 @synthesize mondayOpen, mondayClose, tuesdayOpen, tuesdayClose, wednesdayOpen, wednesdayClose, thursdayOpen, thursdayClose, fridayOpen, fridayClose, saturdatOpen, saturdayClose;
-@synthesize venueType,rating,neighborhoods;
+@synthesize venueType,rating,neighborhoods,imageView;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -103,6 +104,8 @@
     venueType.text = self.storeElements.VenueType;
     rating.text=self.storeElements.Rating;
     neighborhoods.text = self.storeElements.Neighborhoods;
+    NSURL *url = [NSURL URLWithString:self.storeElements.PictureUrl];
+    imageView.imageURL=url;
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)aScrollView {

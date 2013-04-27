@@ -16,7 +16,6 @@
 		E0CCB670172C048500835420 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0CCB66F172C048500835420 /* Default@2x.png */; };
 		E0CCB672172C048500835420 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0CCB671172C048500835420 /* Default-568h@2x.png */; };
 		E0CCB69E172C0A8000835420 /* MSNavigationPaneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCB69D172C0A7F00835420 /* MSNavigationPaneViewController.m */; };
-		E0CCB6AB172C0AFC00835420 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCB69F172C0AFC00835420 /* HomeTableViewCell.m */; };
 		E0CCB6AD172C0AFC00835420 /* OtherControlsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCB6A3172C0AFC00835420 /* OtherControlsViewController.m */; };
 		E0CCB6AE172C0AFC00835420 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCB6A4172C0AFC00835420 /* MasterViewController.m */; };
 		E0CCB6AF172C0AFC00835420 /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCB6A8172C0AFC00835420 /* AboutUsViewController.m */; };
@@ -39,7 +38,7 @@
 		E0CCB6DB172C0DC500835420 /* MSBarButtonIconNavigationPane@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0CCB6CC172C0DC500835420 /* MSBarButtonIconNavigationPane@2x.png */; };
 		E0CCB6EC172C153900835420 /* PRTweenTimingFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCB6E8172C153900835420 /* PRTweenTimingFunctions.m */; };
 		E0CCB6ED172C153900835420 /* PRTween.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCB6EB172C153900835420 /* PRTween.m */; };
-		E0CCB6EE172C17D100835420 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0CCB6E4172C152800835420 /* HomeTableViewCell.xib */; };
+		E0CCB6EE172C17D100835420 /* StoreTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0CCB6E4172C152800835420 /* StoreTableCell.xib */; };
 		E0CCB6F2172C228000835420 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCB6F0172C228000835420 /* HomeViewController.m */; };
 		E0CCB6F3172C228000835420 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0CCB6F1172C228000835420 /* HomeViewController.xib */; };
 		E0CCB701172C40D200835420 /* ClubsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCB6FF172C40D200835420 /* ClubsViewController.m */; };
@@ -63,6 +62,9 @@
 		E0CCB754172C6CAC00835420 /* ApplicationConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCB753172C6CAC00835420 /* ApplicationConstants.m */; };
 		E0CCB75A172C6F8100835420 /* GlobalSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCB756172C6F8000835420 /* GlobalSettings.m */; };
 		E0CCB75B172C6F8100835420 /* DownloadLightWeight.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCB758172C6F8100835420 /* DownloadLightWeight.m */; };
+		E0CCB760172C77F900835420 /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCB75F172C77F900835420 /* AsyncImageView.m */; };
+		E0CCB763172C7A9600835420 /* StoreTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCB762172C7A9600835420 /* StoreTableCell.m */; };
+		E0CCB766172C7D8300835420 /* CacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCB765172C7D8300835420 /* CacheManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,8 +81,6 @@
 		E0CCB671172C048500835420 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		E0CCB69C172C0A7F00835420 /* MSNavigationPaneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSNavigationPaneViewController.h; path = Library/MSNavigationPaneViewController.h; sourceTree = "<group>"; };
 		E0CCB69D172C0A7F00835420 /* MSNavigationPaneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSNavigationPaneViewController.m; path = Library/MSNavigationPaneViewController.m; sourceTree = "<group>"; };
-		E0CCB69F172C0AFC00835420 /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeTableViewCell.m; path = whatsopen_app/Main/HomeTableViewCell.m; sourceTree = "<group>"; };
-		E0CCB6A0172C0AFC00835420 /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeTableViewCell.h; path = whatsopen_app/Main/HomeTableViewCell.h; sourceTree = "<group>"; };
 		E0CCB6A3172C0AFC00835420 /* OtherControlsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OtherControlsViewController.m; path = whatsopen_app/Main/OtherControlsViewController.m; sourceTree = "<group>"; };
 		E0CCB6A4172C0AFC00835420 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MasterViewController.m; path = whatsopen_app/Main/MasterViewController.m; sourceTree = "<group>"; };
 		E0CCB6A5172C0AFC00835420 /* OtherControlsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OtherControlsViewController.h; path = whatsopen_app/Main/OtherControlsViewController.h; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 		E0CCB6CA172C0DC500835420 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		E0CCB6CB172C0DC500835420 /* MSBarButtonIconNavigationPane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MSBarButtonIconNavigationPane.png; sourceTree = "<group>"; };
 		E0CCB6CC172C0DC500835420 /* MSBarButtonIconNavigationPane@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MSBarButtonIconNavigationPane@2x.png"; sourceTree = "<group>"; };
-		E0CCB6E4172C152800835420 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeTableViewCell.xib; path = /Users/junseki/Documents/Projects/whatsopen_app/whatsopen_app/whatsopen_app/Main/HomeTableViewCell.xib; sourceTree = "<absolute>"; };
+		E0CCB6E4172C152800835420 /* StoreTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StoreTableCell.xib; path = /Users/junseki/Documents/Projects/whatsopen_app/whatsopen_app/whatsopen_app/Main/StoreTableCell.xib; sourceTree = "<absolute>"; };
 		E0CCB6E8172C153900835420 /* PRTweenTimingFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRTweenTimingFunctions.m; path = Library/PRTweenTimingFunctions.m; sourceTree = "<group>"; };
 		E0CCB6E9172C153900835420 /* PRTweenTimingFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRTweenTimingFunctions.h; path = Library/PRTweenTimingFunctions.h; sourceTree = "<group>"; };
 		E0CCB6EA172C153900835420 /* PRTween.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRTween.h; path = Library/PRTween.h; sourceTree = "<group>"; };
@@ -151,6 +151,12 @@
 		E0CCB757172C6F8000835420 /* DownloadLightWeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DownloadLightWeight.h; path = "App Constants/DownloadLightWeight.h"; sourceTree = "<group>"; };
 		E0CCB758172C6F8100835420 /* DownloadLightWeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DownloadLightWeight.m; path = "App Constants/DownloadLightWeight.m"; sourceTree = "<group>"; };
 		E0CCB759172C6F8100835420 /* ApplicationMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ApplicationMacros.h; path = "App Constants/ApplicationMacros.h"; sourceTree = "<group>"; };
+		E0CCB75E172C77F900835420 /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
+		E0CCB75F172C77F900835420 /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
+		E0CCB761172C7A9500835420 /* StoreTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreTableCell.h; path = whatsopen_app/Main/StoreTableCell.h; sourceTree = "<group>"; };
+		E0CCB762172C7A9600835420 /* StoreTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreTableCell.m; path = whatsopen_app/Main/StoreTableCell.m; sourceTree = "<group>"; };
+		E0CCB764172C7D8200835420 /* CacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CacheManager.h; path = "App Constants/CacheManager.h"; sourceTree = "<group>"; };
+		E0CCB765172C7D8300835420 /* CacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CacheManager.m; path = "App Constants/CacheManager.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,9 +209,9 @@
 		E0CCB661172C048500835420 /* whatsopen_app */ = {
 			isa = PBXGroup;
 			children = (
+				E0CCB75C172C77E500835420 /* Library */,
 				E0CCB751172C6B0A00835420 /* App Constants */,
 				E0CCB731172C5A5500835420 /* Data Classes */,
-				E0CCB710172C576100835420 /* JSON */,
 				E0CCB6BD172C0DC500835420 /* Images */,
 				E0CCB6B1172C0B0200835420 /* Main */,
 				E0CCB695172C05D000835420 /* Vendor */,
@@ -240,29 +246,29 @@
 		E0CCB6B1172C0B0200835420 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				E0CCB703172C410A00835420 /* RestaurantsViewController.h */,
-				E0CCB704172C410A00835420 /* RestaurantsViewController.m */,
-				E0CCB705172C410A00835420 /* RestaurantsViewController.xib */,
 				E0CCB6A7172C0AFC00835420 /* AboutUsViewController.h */,
 				E0CCB6A8172C0AFC00835420 /* AboutUsViewController.m */,
 				E0CCB6A9172C0AFC00835420 /* AppDelegate.h */,
 				E0CCB6AA172C0AFC00835420 /* AppDelegate.m */,
-				E0CCB6A0172C0AFC00835420 /* HomeTableViewCell.h */,
-				E0CCB69F172C0AFC00835420 /* HomeTableViewCell.m */,
-				E0CCB6E4172C152800835420 /* HomeTableViewCell.xib */,
+				E0CCB6FE172C40D100835420 /* ClubsViewController.h */,
+				E0CCB6FF172C40D200835420 /* ClubsViewController.m */,
+				E0CCB700172C40D200835420 /* ClubsViewController.xib */,
+				E0CCB70A172C4BC200835420 /* DetailViewController.h */,
+				E0CCB70B172C4BC300835420 /* DetailViewController.m */,
+				E0CCB70C172C4BC300835420 /* DetailViewController.xib */,
+				E0CCB6EF172C228000835420 /* HomeViewController.h */,
+				E0CCB6F0172C228000835420 /* HomeViewController.m */,
+				E0CCB6F1172C228000835420 /* HomeViewController.xib */,
 				E0CCB6A6172C0AFC00835420 /* MasterViewController.h */,
 				E0CCB6A4172C0AFC00835420 /* MasterViewController.m */,
 				E0CCB6A5172C0AFC00835420 /* OtherControlsViewController.h */,
 				E0CCB6A3172C0AFC00835420 /* OtherControlsViewController.m */,
-				E0CCB6EF172C228000835420 /* HomeViewController.h */,
-				E0CCB6F0172C228000835420 /* HomeViewController.m */,
-				E0CCB70A172C4BC200835420 /* DetailViewController.h */,
-				E0CCB70B172C4BC300835420 /* DetailViewController.m */,
-				E0CCB70C172C4BC300835420 /* DetailViewController.xib */,
-				E0CCB6F1172C228000835420 /* HomeViewController.xib */,
-				E0CCB6FE172C40D100835420 /* ClubsViewController.h */,
-				E0CCB6FF172C40D200835420 /* ClubsViewController.m */,
-				E0CCB700172C40D200835420 /* ClubsViewController.xib */,
+				E0CCB703172C410A00835420 /* RestaurantsViewController.h */,
+				E0CCB704172C410A00835420 /* RestaurantsViewController.m */,
+				E0CCB705172C410A00835420 /* RestaurantsViewController.xib */,
+				E0CCB761172C7A9500835420 /* StoreTableCell.h */,
+				E0CCB762172C7A9600835420 /* StoreTableCell.m */,
+				E0CCB6E4172C152800835420 /* StoreTableCell.xib */,
 			);
 			name = Main;
 			path = ..;
@@ -347,6 +353,8 @@
 		E0CCB751172C6B0A00835420 /* App Constants */ = {
 			isa = PBXGroup;
 			children = (
+				E0CCB764172C7D8200835420 /* CacheManager.h */,
+				E0CCB765172C7D8300835420 /* CacheManager.m */,
 				E0CCB755172C6F8000835420 /* GlobalSettings.h */,
 				E0CCB756172C6F8000835420 /* GlobalSettings.m */,
 				E0CCB757172C6F8000835420 /* DownloadLightWeight.h */,
@@ -356,6 +364,25 @@
 				E0CCB753172C6CAC00835420 /* ApplicationConstants.m */,
 			);
 			name = "App Constants";
+			sourceTree = "<group>";
+		};
+		E0CCB75C172C77E500835420 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				E0CCB75D172C77F900835420 /* Async Images */,
+				E0CCB710172C576100835420 /* JSON */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		E0CCB75D172C77F900835420 /* Async Images */ = {
+			isa = PBXGroup;
+			children = (
+				E0CCB75E172C77F900835420 /* AsyncImageView.h */,
+				E0CCB75F172C77F900835420 /* AsyncImageView.m */,
+			);
+			name = "Async Images";
+			path = "Library/Async Images";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -428,7 +455,7 @@
 				E0CCB6D9172C0DC500835420 /* iTunesArtwork@2x.png in Resources */,
 				E0CCB6DA172C0DC500835420 /* MSBarButtonIconNavigationPane.png in Resources */,
 				E0CCB6DB172C0DC500835420 /* MSBarButtonIconNavigationPane@2x.png in Resources */,
-				E0CCB6EE172C17D100835420 /* HomeTableViewCell.xib in Resources */,
+				E0CCB6EE172C17D100835420 /* StoreTableCell.xib in Resources */,
 				E0CCB6F3172C228000835420 /* HomeViewController.xib in Resources */,
 				E0CCB702172C40D200835420 /* ClubsViewController.xib in Resources */,
 				E0CCB707172C410B00835420 /* RestaurantsViewController.xib in Resources */,
@@ -446,7 +473,6 @@
 			files = (
 				E0CCB668172C048500835420 /* main.m in Sources */,
 				E0CCB69E172C0A8000835420 /* MSNavigationPaneViewController.m in Sources */,
-				E0CCB6AB172C0AFC00835420 /* HomeTableViewCell.m in Sources */,
 				E0CCB6AD172C0AFC00835420 /* OtherControlsViewController.m in Sources */,
 				E0CCB6AE172C0AFC00835420 /* MasterViewController.m in Sources */,
 				E0CCB6AF172C0AFC00835420 /* AboutUsViewController.m in Sources */,
@@ -469,6 +495,9 @@
 				E0CCB754172C6CAC00835420 /* ApplicationConstants.m in Sources */,
 				E0CCB75A172C6F8100835420 /* GlobalSettings.m in Sources */,
 				E0CCB75B172C6F8100835420 /* DownloadLightWeight.m in Sources */,
+				E0CCB760172C77F900835420 /* AsyncImageView.m in Sources */,
+				E0CCB763172C7A9600835420 /* StoreTableCell.m in Sources */,
+				E0CCB766172C7D8300835420 /* CacheManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
