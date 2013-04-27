@@ -11,4 +11,8 @@
 @interface HomeTableViewCell : UITableViewCell
 
 @property (nonatomic, retain) IBOutlet UIImageView *mainImage;
+
+@property (nonatomic, retain) IBOutlet UILabel *storeName;
+@property (nonatomic, retain) IBOutlet UILabel *storeAddress;
+@property (nonatomic, retain) IBOutlet UILabel *storeDistance;
 @end

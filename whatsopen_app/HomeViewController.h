@@ -7,11 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "StoreData.h"
+#import "StoreElements.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface HomeViewController : UITableViewController<UITableViewDelegate,UITableViewDataSource>
-{
+@interface HomeViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource> {
     
+    IBOutlet UITableView *storeListTableView;
+    StoreData *storeData;
+    CLLocationManager *locationManager;
 }
 
+@property (nonatomic, retain) IBOutlet UITableView *storeListTableView;
+@property (nonatomic, retain) StoreData *storeData;
+@property (nonatomic, retain) NSMutableArray *storeArray;
+
+@property (nonatomic, retain) NSMutableArray *distanceArray;
 
 @end

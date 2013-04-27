@@ -11,6 +11,7 @@
 
 @implementation HomeTableViewCell
 @synthesize mainImage;
+@synthesize storeAddress,storeDistance,storeName;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

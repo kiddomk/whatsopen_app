@@ -15,26 +15,21 @@
 @end
 
 @implementation HomeViewController
+@synthesize storeListTableView;
+@synthesize storeArray, storeData, distanceArray;
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+- (void)viewWillAppear:(BOOL)animated {
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:nil] forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    StoreData *_parser = [[StoreData alloc] initParserWithDelegate:self];
+    self.storeData = _parser;
+    _parser=nil;
+     [self.storeData getParserRequest];
     
     
     UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
@@ -45,8 +40,44 @@
     self.refreshControl = refresh;
     
        
-    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    [self.storeListTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 }
+
+
+-(void)didGetParsedInfo:(NSMutableArray *)inBody {
+    
+    self.storeArray = inBody;
+    
+    locationManager = [[CLLocationManager alloc] init];
+    distanceArray = [[NSMutableArray alloc] init];
+    
+    for(StoreElements *storeElements in inBody) {
+        
+        double lat = locationManager.location.coordinate.latitude;
+        double lon = locationManager.location.coordinate.longitude;
+        
+        
+        NSString *lat1 = storeElements.Latitude;
+        NSString *lon1 = storeElements.Longitude;
+        double lat2 = [lat1 doubleValue];
+        double lon2 = [lon1 doubleValue];
+        
+        CLLocation *locA = [[CLLocation alloc] initWithLatitude:lat longitude:lon];
+        CLLocation *locB = [[CLLocation alloc] initWithLatitude:lat2 longitude:lon2];
+        CLLocationDistance distance = [locA distanceFromLocation:locB];
+        
+        //NSLog(@"distance is :%f", distance);
+        //NSLog(@"miles :%f", (distance/1000));
+        
+        NSString *dString = [NSString stringWithFormat:@"%.2f", (distance/1000)];
+        [distanceArray addObject:dString];
+        
+    }
+    
+    [self.storeListTableView reloadData];
+}
+
+
 
  -(void)refreshView:(UIRefreshControl *)refresh {
     refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Refreshing data..."];
@@ -71,25 +102,18 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 5;
+
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 5;
+    return [storeArray count];
+
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //static NSString *CellIdentifier = @"Cell";
-   // UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-//    if (cell == nil) {
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-//    }
     
     NSString *nibTitle = @"HomeTableViewCell";
     
@@ -105,64 +129,13 @@
         [cell setSelectionStyle:UITableViewCellSelectionStyleGray];
     }
     
-//    ShopElements *_shopElement = nil;
-//    
-//    if (tableView == shopTableView) {
-//        _shopElement = [self.tableDataSource objectAtIndex:indexPath.row];
-//    } else {
-//        _shopElement = [self.filteredListContent objectAtIndex:indexPath.row];
-//    }
-//    if ([_shopElement isKindOfClass:[NSString class]]) {
-//        cell.textLabel.text = [NSString stringWithFormat:@"Search for \"%@\"", searchBar.text];
-//    } else {
-//        
-//        NSURL *url = [NSURL URLWithString:_shopElement.categoryThumbnailUrl];
-//        cell.categoryImage.imageURL = url;
-//        cell.categoryText.text = _shopElement.categoryTitle;
-//    }
-   
-    
+    StoreElements *_storeElements = [self.storeArray objectAtIndex:indexPath.row];
+    cell.storeName.text = _storeElements.Name;
+    cell.storeAddress.text = _storeElements.Address;
+    cell.storeDistance.text = [NSString stringWithFormat:@"%@ %@", [distanceArray objectAtIndex:indexPath.row], @"miles"];
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
@@ -172,9 +145,9 @@
     
     DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
     
-     
+    StoreElements *_storeElements = [self.storeArray objectAtIndex:indexPath.row]; 
      // Pass the selected object to the new view controller.
-          
+           detailViewController.storeElements = _storeElements;
     [self.navigationController pushViewController:detailViewController animated:YES];
 
 }
