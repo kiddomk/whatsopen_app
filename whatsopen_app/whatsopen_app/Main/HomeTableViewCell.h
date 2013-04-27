@@ -10,4 +10,5 @@
 
 @interface HomeTableCell : UITableViewCell
 
+@property (nonatomic, retain) IBOutlet UIImageView *mainImage;
 @end

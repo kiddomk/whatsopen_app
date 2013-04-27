@@ -9,6 +9,7 @@
 #import "HomeTableViewCell.h"
 
 @implementation HomeTableCell
+@synthesize mainImage;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

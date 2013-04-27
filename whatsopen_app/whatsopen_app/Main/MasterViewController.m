@@ -148,13 +148,11 @@ typedef NS_ENUM(NSUInteger, MasterViewControllerTableViewSectionType) {
     
     BOOL animateTransition = self.navigationPaneViewController.paneViewController != nil;
     
-#if defined(STORYBOARD)
-    UIViewController *paneViewController = [self.navigationPaneViewController.storyboard instantiateViewControllerWithIdentifier:self.paneViewControllerIdentifiers[@(paneViewControllerType)]];
-#else
+
     Class paneViewControllerClass = self.paneViewControllerClasses[@(paneViewControllerType)];
     NSParameterAssert([paneViewControllerClass isSubclassOfClass:UIViewController.class]);
     UIViewController *paneViewController = (UIViewController *)[[paneViewControllerClass alloc] init];
-#endif
+
     
     paneViewController.navigationItem.title = self.paneViewControllerTitles[@(paneViewControllerType)];
     
@@ -206,10 +204,6 @@ typedef NS_ENUM(NSUInteger, MasterViewControllerTableViewSectionType) {
     MSPaneViewControllerType paneViewControllerType = [self paneViewControllerTypeForIndexPath:indexPath];
     cell.textLabel.text = self.paneViewControllerTitles[@(paneViewControllerType)];
     
-    // Add a checkmark to the current pane type
- //  if (self.paneViewControllerAppearanceTypes[@(paneViewControllerType)] && (self.navigationPaneViewController.appearanceType == [self.paneViewControllerAppearanceTypes[@(paneViewControllerType)] unsignedIntegerValue])) {
-//        cell.textLabel.text = [NSString stringWithFormat:@"✓ %@", cell.textLabel.text];
-//    }
     
     return cell;
 }
@@ -221,11 +215,7 @@ typedef NS_ENUM(NSUInteger, MasterViewControllerTableViewSectionType) {
     MSPaneViewControllerType paneViewControllerType = [self paneViewControllerTypeForIndexPath:indexPath];
     [self transitionToViewController:paneViewControllerType];
     
-//    if (self.paneViewControllerAppearanceTypes[@(paneViewControllerType)]) {
-//        self.navigationPaneViewController.appearanceType = [self.paneViewControllerAppearanceTypes[@(paneViewControllerType)] unsignedIntegerValue];
-//        // Update row titles
-//        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationFade];
-//    }
+
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
