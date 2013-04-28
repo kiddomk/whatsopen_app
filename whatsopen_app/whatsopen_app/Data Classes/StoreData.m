@@ -92,7 +92,8 @@
           parsed.Rating = ([mainDict valueForKey:@"Rating"] == [NSNull null]?@"NA":[mainDict valueForKey:@"Rating"]);
           parsed.VenueUrl = ([mainDict valueForKey:@"VenueUrl"] == [NSNull null]?@"NA":[mainDict valueForKey:@"VenueUrl"]);
           parsed.Neighborhoods = ([mainDict valueForKey:@"Neighborhoods"] == [NSNull null]?@"NA":[mainDict valueForKey:@"Neighborhoods"]);
-         
+         parsed.ClosingTime = ([mainDict valueForKey:@"ClosingTime"] == [NSNull null]?@"NA":[mainDict valueForKey:@"ClosingTime"]);
+        parsed.TimeLeft = ([mainDict valueForKey:@"TimeLeft"] == [NSNull null]?@"NA":[mainDict valueForKey:@"TimeLeft"]);
         
         [parsedBodyArray addObject:parsed];
     }

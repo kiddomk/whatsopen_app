@@ -42,11 +42,8 @@
     NSString *Rating;
     NSString *VenueUrl;
     NSString *Neighborhoods;
-//VenueType: "Pub",
-//PictureUrl: "http://s3-media2.ak.yelpcdn.com/bphoto/rn3V0QThjFerfzWZuv5gOQ/l.jpg",
-//Rating: 4,
-//VenueUrl: "http://www.yelp.co.uk/biz/tin-pan-alley-london",
-//Neighborhoods: "Soho",
+    NSString *ClosingTime;
+    NSString *TimeLeft;
 }
 
 @property (nonatomic, retain) NSString *ID;
@@ -81,5 +78,7 @@
 @property (nonatomic, retain) NSString *Rating;
 @property (nonatomic, retain) NSString *VenueUrl;
 @property (nonatomic, retain) NSString *Neighborhoods;
+@property (nonatomic, retain) NSString *ClosingTime;
+@property (nonatomic, retain) NSString *TimeLeft;
 
 @end

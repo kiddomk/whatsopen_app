@@ -107,6 +107,9 @@
     telephone.text = self.storeElements.Phone;
     notes.text=self.storeElements.Notes;
     venueType.text = self.storeElements.VenueType;
+    closingTime.text=[NSString stringWithFormat:@"Open until %@",self.storeElements.ClosingTime];
+
+    timeLeft.text=self.storeElements.TimeLeft;
     
     neighborhoods.text = self.storeElements.Neighborhoods;
     NSURL *url = [NSURL URLWithString:self.storeElements.PictureUrl];
