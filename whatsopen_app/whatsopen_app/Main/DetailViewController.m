@@ -102,7 +102,7 @@
     saturdatOpen.text = self.storeElements.SaturdayOpenTime;
     saturdayClose.text = self.storeElements.SaturdayCloseTime;
     venueType.text = self.storeElements.VenueType;
-    rating.text=self.storeElements.Rating;
+    rating.text=[NSString stringWithFormat:@"%@", storeElements.Rating];
     neighborhoods.text = self.storeElements.Neighborhoods;
     NSURL *url = [NSURL URLWithString:self.storeElements.PictureUrl];
     imageView.imageURL=url;
@@ -135,12 +135,35 @@
     
     double latitude = [self.storeElements.Latitude doubleValue];
     double longitude = [self.storeElements.Longitude doubleValue];
-    NSString *coString = [NSString stringWithFormat:@"%f,%f", latitude,longitude];
-    NSString *loString = [NSString stringWithFormat:@"%f,%f", locationManager.location.coordinate.latitude, locationManager.location.coordinate.longitude];
-    NSString *combinedString = [NSString stringWithFormat:@"%@%@%@%@%@", @"saddr=", coString, @"&",@"daddr=", loString];
-    NSURL *mapURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://maps.apple.com/?%@", combinedString]];
-    //NSLog(@"url is :%@", mapURLgit);
-    [[UIApplication sharedApplication] openURL:mapURL];
+//    NSString *coString = [NSString stringWithFormat:@"%f,%f", latitude,longitude];
+//    NSString *loString = [NSString stringWithFormat:@"%f,%f", locationManager.location.coordinate.latitude, locationManager.location.coordinate.longitude];
+//    NSString *combinedString = [NSString stringWithFormat:@"%@%@%@%@%@", @"saddr=", coString, @"&",@"daddr=", loString];
+//    NSURL *mapURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://maps.apple.com/?%@", combinedString]];
+//    //NSLog(@"url is :%@", mapURLgit);
+//    [[UIApplication sharedApplication] openURL:mapURL];
+    
+    
+    Class mapItemClass = [MKMapItem class];
+    if (mapItemClass && [mapItemClass respondsToSelector:@selector(openMapsWithItems:launchOptions:)])
+    {
+        // Create an MKMapItem to pass to the Maps app
+        CLLocationCoordinate2D coordinate =CLLocationCoordinate2DMake(latitude, longitude);
+        MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:coordinate
+                                                       addressDictionary:nil];
+        MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
+
+        [mapItem setName:storeElements.Name];
+        
+        // Set the directions mode to "Walking"
+        // Can use MKLaunchOptionsDirectionsModeDriving instead
+        NSDictionary *launchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking};
+        // Get the "Current User Location" MKMapItem
+        MKMapItem *currentLocationMapItem = [MKMapItem mapItemForCurrentLocation];
+        // Pass the current location and destination map items to the Maps app
+        // Set the direction mode in the launchOptions dictionary
+        [MKMapItem openMapsWithItems:@[currentLocationMapItem, mapItem]
+                       launchOptions:launchOptions];
+    }
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {

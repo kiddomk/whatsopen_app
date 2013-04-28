@@ -69,7 +69,7 @@
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<object class="NSCustomResource" key="IBUIImage">
+								<object class="NSCustomResource" key="IBUIImage" id="335884990">
 									<string key="NSClassName">NSImage</string>
 									<string key="NSResourceName">Loading-screen.png</string>
 								</object>
@@ -98,12 +98,10 @@
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="264269404"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
+								<int key="IBUIContentMode">1</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<object class="NSCustomResource" key="IBUIImage">
-									<string key="NSClassName">NSImage</string>
-									<string key="NSResourceName">4star.png</string>
-								</object>
+								<reference key="IBUIImage" ref="335884990"/>
 							</object>
 							<object class="IBUILabel" id="27011979">
 								<reference key="NSNextResponder" ref="743842204"/>
@@ -148,7 +146,7 @@
 								<int key="IBUIContentMode">7</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<string key="IBUIText">Address</string>
+								<string key="IBUIText">venueType</string>
 								<reference key="IBUITextColor" ref="651560412"/>
 								<reference key="IBUIHighlightedColor" ref="651560412"/>
 								<int key="IBUIBaselineAdjustment">0</int>
@@ -258,14 +256,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">storeAddress</string>
-						<reference key="source" ref="207204593"/>
-						<reference key="destination" ref="311479458"/>
-					</object>
-					<int key="connectionID">28</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">storeDistance</string>
 						<reference key="source" ref="207204593"/>
 						<reference key="destination" ref="674160236"/>
@@ -279,6 +269,30 @@
 						<reference key="destination" ref="766616309"/>
 					</object>
 					<int key="connectionID">38</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">venueTypeLabel</string>
+						<reference key="source" ref="207204593"/>
+						<reference key="destination" ref="311479458"/>
+					</object>
+					<int key="connectionID">243</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">closingTimeLabel</string>
+						<reference key="source" ref="207204593"/>
+						<reference key="destination" ref="4100894"/>
+					</object>
+					<int key="connectionID">244</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">ratingImageView</string>
+						<reference key="source" ref="207204593"/>
+						<reference key="destination" ref="94267373"/>
+					</object>
+					<int key="connectionID">245</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -938,7 +952,40 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">206</int>
 						<reference key="object" ref="94267373"/>
-						<array class="NSMutableArray" key="children"/>
+						<array class="NSMutableArray" key="children">
+							<object class="IBNSLayoutConstraint" id="503174286">
+								<reference key="firstItem" ref="94267373"/>
+								<int key="firstAttribute">8</int>
+								<int key="relation">0</int>
+								<nil key="secondItem"/>
+								<int key="secondAttribute">0</int>
+								<float key="multiplier">1</float>
+								<object class="IBLayoutConstant" key="constant">
+									<double key="value">19</double>
+								</object>
+								<float key="priority">1000</float>
+								<reference key="containingView" ref="94267373"/>
+								<int key="scoringType">3</int>
+								<float key="scoringTypeFloat">9</float>
+								<int key="contentType">1</int>
+							</object>
+							<object class="IBNSLayoutConstraint" id="643673335">
+								<reference key="firstItem" ref="94267373"/>
+								<int key="firstAttribute">7</int>
+								<int key="relation">0</int>
+								<nil key="secondItem"/>
+								<int key="secondAttribute">0</int>
+								<float key="multiplier">1</float>
+								<object class="IBLayoutConstant" key="constant">
+									<double key="value">91</double>
+								</object>
+								<float key="priority">1000</float>
+								<reference key="containingView" ref="94267373"/>
+								<int key="scoringType">3</int>
+								<float key="scoringTypeFloat">9</float>
+								<int key="contentType">1</int>
+							</object>
+						</array>
 						<reference key="parent" ref="207204593"/>
 						<string key="objectName">Image View - rating</string>
 					</object>
@@ -1002,6 +1049,16 @@
 						<reference key="object" ref="749616987"/>
 						<reference key="parent" ref="207204593"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">246</int>
+						<reference key="object" ref="643673335"/>
+						<reference key="parent" ref="94267373"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">247</int>
+						<reference key="object" ref="503174286"/>
+						<reference key="parent" ref="94267373"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -1061,6 +1118,10 @@
 				<string key="203.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="204.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="206.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<array key="206.IBViewMetadataConstraints">
+					<reference ref="643673335"/>
+					<reference ref="503174286"/>
+				</array>
 				<boolean value="NO" key="206.IBViewMetadataTranslatesAutoresizingMaskIntoConstraints"/>
 				<string key="213.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="223.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -1073,6 +1134,8 @@
 				<string key="240.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="241.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="242.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="246.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="247.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="3.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<array key="3.IBViewMetadataConstraints">
 					<reference ref="952569220"/>
@@ -1107,7 +1170,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">242</int>
+			<int key="maxID">247</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1126,7 +1189,6 @@
 						<string key="closingTimeLabel">UILabel</string>
 						<string key="mainImageView">UIImageView</string>
 						<string key="ratingImageView">UIImageView</string>
-						<string key="storeAddress">UILabel</string>
 						<string key="storeDistance">UILabel</string>
 						<string key="storeName">UILabel</string>
 						<string key="venueTypeLabel">UILabel</string>
@@ -1143,10 +1205,6 @@
 						<object class="IBToOneOutletInfo" key="ratingImageView">
 							<string key="name">ratingImageView</string>
 							<string key="candidateClassName">UIImageView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="storeAddress">
-							<string key="name">storeAddress</string>
-							<string key="candidateClassName">UILabel</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="storeDistance">
 							<string key="name">storeDistance</string>
@@ -1173,7 +1231,6 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="4star.png">{91, 19}</string>
 			<string key="Loading-screen.png">{640, 837}</string>
 			<string key="shadow.png">{635, 9}</string>
 		</dictionary>

@@ -10,14 +10,14 @@
 
 @implementation StoreTableCell
     
-@synthesize storeAddress, storeDistance, storeName;
-@synthesize mainImageView;
+@synthesize venueTypeLabel, storeDistance, storeName,closingTimeLabel;
+@synthesize mainImageView,ratingImageView;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
+        
     }
     return self;
 }

@@ -147,10 +147,16 @@
         [[AsyncImageLoader sharedLoader] cancelLoadingImagesForTarget:cell.imageView];
     }
     StoreElements *_storeElements = [self.storeArray objectAtIndex:indexPath.row];
+    [cell.storeName setFont:[UIFont fontWithName:@"Proxima Nova" size:26]];
     cell.storeName.text = _storeElements.Name;
-    cell.storeAddress.text = _storeElements.Address;
+    
+   // [cell.storeAddress setFont:[UIFont fontWithName:@"Proxima Nova" size:16]];
+    cell.venueTypeLabel.text = _storeElements.VenueType;
     cell.storeDistance.text = [NSString stringWithFormat:@"%@ %@", [distanceArray objectAtIndex:indexPath.row], @"miles"];
     
+    //#hard coded closing time
+    //cell.closingTimeLabel.text=_storeElements.SundayCloseTime;
+    [self customRatingImageWithNumber:_storeElements.Rating onCell:cell];
     NSLog(@"picture Url: %@",_storeElements.PictureUrl);
     NSURL *url = [NSURL URLWithString:_storeElements.PictureUrl];
     cell.mainImageView.imageURL=url;
@@ -158,64 +164,32 @@
     return cell;
 }
 
-
-
--(void)customLabelWithName:(NSString *)nameString
-           withVenueType:(NSString *)venueTypeString
-           withClosingTime:(NSString *)closingTimeString
-                   withDistance:(NSString *)distanceString
-                withRating:(NSString *)ratingString
+-(void)customRatingImageWithNumber:(NSString *)number
                      onCell:(StoreTableCell *)cell
 {
-        /*name label */
-        UILabel *nameLabel;
-        nameLabel=[[UILabel alloc]initWithFrame:CGRectMake(14, 230, 320, 40)];
-        [nameLabel setFont:[UIFont systemFontOfSize:35]];
-        [nameLabel setTextColor:[UIColor whiteColor]];
-        [nameLabel setBackgroundColor:[UIColor clearColor]];
-        [nameLabel setTextAlignment:NSTextAlignmentLeft];
-        nameLabel.text=nameString;
-        [cell addSubview:nameLabel];
+    UIImage *image;
+    double ratingNumber = [number doubleValue];
     
-    /*venueType label */
-    UILabel *venueTypeLabel;
-    venueTypeLabel=[[UILabel alloc]initWithFrame:CGRectMake(14, 250, 100, 10)];
-    [venueTypeLabel setFont:[UIFont systemFontOfSize:15]];
-    [venueTypeLabel setTextColor:[UIColor whiteColor]];
-    [venueTypeLabel setBackgroundColor:[UIColor clearColor]];
-    [venueTypeLabel setTextAlignment:NSTextAlignmentLeft];
-    venueTypeLabel.text=venueTypeString;
-    [cell addSubview:venueTypeLabel];
-    
-    /*venueType label */
-    UILabel *closingTimeLabel;
-    closingTimeLabel=[[UILabel alloc]initWithFrame:CGRectMake(240, 81, 127, 25)];
-    [closingTimeLabel setFont:[UIFont systemFontOfSize:18]];
-    [closingTimeLabel setTextColor:[UIColor whiteColor]];
-    [closingTimeLabel setBackgroundColor:[UIColor clearColor]];
-    [closingTimeLabel setTextAlignment:NSTextAlignmentRight];
-    closingTimeLabel.text=closingTimeString;
-    [cell addSubview:closingTimeLabel];
-    
-    /*distance label */
-    UILabel *distanceLabel;
-    distanceLabel=[[UILabel alloc]initWithFrame:CGRectMake(240, 102, 127, 25)];
-    [distanceLabel setFont:[UIFont systemFontOfSize:18]];
-    [distanceLabel setTextColor:[UIColor whiteColor]];
-    [distanceLabel setBackgroundColor:[UIColor clearColor]];
-    [distanceLabel setTextAlignment:NSTextAlignmentRight];
-    distanceLabel.text=distanceString;
-    [cell addSubview:distanceLabel];
-    
-    /*rating label */
-    UILabel *ratingLabel;
-    ratingLabel=[[UILabel alloc]initWithFrame:CGRectMake(240, 250, 127, 25)];
-    [ratingLabel setFont:[UIFont systemFontOfSize:18]];
-    [ratingLabel setTextColor:[UIColor whiteColor]];
-    [ratingLabel setBackgroundColor:[UIColor clearColor]];
-    [ratingLabel setTextAlignment:NSTextAlignmentRight];
-    ratingLabel.text=ratingString;
-    [cell addSubview:ratingLabel];
+    if (ratingNumber==0.5||ratingNumber==1.0) {
+            image= [UIImage imageNamed: @"1star.png"];
+    }
+    else if (ratingNumber==1.5||ratingNumber==2.0)
+    {
+         image= [UIImage imageNamed: @"2star.png"];
+    }
+    else if (ratingNumber==2.5||ratingNumber==3.0)
+    {
+         image= [UIImage imageNamed: @"3star.png"];
+    }
+    else if (ratingNumber==3.5||ratingNumber==4.0)
+    {
+         image= [UIImage imageNamed: @"4star.png"];
+    }
+    else if (ratingNumber==4.5||ratingNumber==5.0)
+    {
+         image= [UIImage imageNamed: @"5star.png"];
+    }
+    [cell.ratingImageView setImage:image];
 }
 
 
@@ -229,6 +203,10 @@
     
     StoreElements *_storeElements = [self.storeArray objectAtIndex:indexPath.row]; 
      // Pass the selected object to the new view controller.
+    
+    NSURL *url = [NSURL URLWithString:_storeElements.PictureUrl];
+    detailViewController.imageView.imageURL=url;
+    
            detailViewController.storeElements = _storeElements;
     [self.navigationController pushViewController:detailViewController animated:YES];
 

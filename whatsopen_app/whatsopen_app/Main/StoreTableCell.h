@@ -16,7 +16,6 @@
 
 @property (nonatomic, retain) IBOutlet UIImageView *mainImageView;
 @property (nonatomic, retain) IBOutlet UILabel *storeName;
-@property (nonatomic, retain) IBOutlet UILabel *storeAddress;
 @property (nonatomic, retain) IBOutlet UILabel *storeDistance;
 @property (nonatomic, retain) IBOutlet UILabel *venueTypeLabel;
 @property (nonatomic, retain) IBOutlet UILabel *closingTimeLabel;
