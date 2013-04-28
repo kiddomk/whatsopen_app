@@ -41,7 +41,7 @@
     request=[NSMutableURLRequest requestWithURL:url
                                     cachePolicy:NSURLRequestUseProtocolCachePolicy
                                 timeoutInterval:10.0];
-	[request setHTTPMethod: @"POST"];
+	[request setHTTPMethod: @"GET"];
     NSLog(@"Webservice is:%@",url);
     
     [self launch];
@@ -56,6 +56,8 @@
         
         parsed.ID = ([mainDict valueForKey:@"Id"] == [NSNull null]?@"NA":[mainDict valueForKey:@"Id"]);
         parsed.Name = ([mainDict valueForKey:@"Name"] == [NSNull null]?@"NA":[mainDict valueForKey:@"Name"]);
+       
+        NSLog(@"Name:%@",parsed.Name);
         parsed.Address = ([mainDict valueForKey:@"Address"] == [NSNull null]?@"NA":[mainDict valueForKey:@"Address"]);
         parsed.Address2 = ([mainDict valueForKey:@"Address2"] == [NSNull null]?@"NA":[mainDict valueForKey:@"Address2"]);
         parsed.City = ([mainDict valueForKey:@"City"] == [NSNull null]?@"NA":[mainDict valueForKey:@"City"]);

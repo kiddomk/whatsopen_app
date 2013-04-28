@@ -32,6 +32,8 @@
 #import "RestaurantsViewController.h"
 #import "OtherControlsViewController.h"
 #import "AboutUsViewController.h"
+#import <netinet/in.h>
+#import <SystemConfiguration/SystemConfiguration.h>
 
 NSString * const MasterViewControllerCellReuseIdentifier = @"MasterViewControllerCellReuseIdentifier";
 
@@ -88,6 +90,19 @@ typedef NS_ENUM(NSUInteger, MasterViewControllerTableViewSectionType) {
     
     // Default to the "None" appearance type
     [self transitionToViewController:MSPaneViewControllerTypeHome];
+    
+    if (![self connectedToNetwork ]) {
+        
+        
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Network Connection"
+														message:@"Your device does not appear to be connected to the network. Please try again when you have network connection"
+													   delegate:nil
+											  cancelButtonTitle:@"OK"
+											  otherButtonTitles:nil];
+		
+		[alert show];
+    }
+    
 }
 
 #pragma mark - MasterViewController
@@ -226,5 +241,30 @@ typedef NS_ENUM(NSUInteger, MasterViewControllerTableViewSectionType) {
     // Ensure that the pane's table view can scroll to top correctly
     self.tableView.scrollsToTop = (state == MSNavigationPaneStateOpen);
 }
+
+
+- (BOOL) connectedToNetwork {
+	struct sockaddr_in zeroAddress;
+	bzero(&zeroAddress, sizeof(zeroAddress));
+	zeroAddress.sin_len = sizeof(zeroAddress);
+	zeroAddress.sin_family = AF_INET;
+	
+	SCNetworkReachabilityRef defaultRouteReachability = SCNetworkReachabilityCreateWithAddress(NULL, (struct sockaddr*) &zeroAddress);
+	SCNetworkReachabilityFlags flags;
+	
+	BOOL didRetrieveFlags = SCNetworkReachabilityGetFlags(defaultRouteReachability, &flags);
+	CFRelease(defaultRouteReachability);
+	
+	if (!didRetrieveFlags) {
+		// can't retrieve flags
+		return NO;
+	}
+	
+	BOOL isReachable = flags & kSCNetworkFlagsReachable;
+	BOOL needsConnection = flags & kSCNetworkFlagsConnectionRequired;
+	
+	return (isReachable && !needsConnection) ? YES : NO;
+}
+
 
 @end

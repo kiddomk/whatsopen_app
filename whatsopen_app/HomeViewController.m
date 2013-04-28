@@ -16,7 +16,7 @@
 @end
 
 @implementation HomeViewController
-@synthesize storeListTableView;
+
 @synthesize storeArray, storeData, distanceArray;
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -27,11 +27,7 @@
 {
     [super viewDidLoad];
     
-    StoreData *_parser = [[StoreData alloc] initParserWithDelegate:self];
-    self.storeData = _parser;
-    _parser=nil;
-     [self.storeData getParserRequest];
-    
+   
     
     UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
     refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull to Refresh"];
@@ -40,8 +36,13 @@
                  forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refresh;
     
-       
-    [self.storeListTableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    StoreData *_parser = [[StoreData alloc] initParserWithDelegate:self];
+    self.storeData = _parser;
+    _parser=nil;
+    [self.storeData getParserRequest];
+    
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+
 }
 
 
@@ -67,15 +68,15 @@
         CLLocation *locB = [[CLLocation alloc] initWithLatitude:lat2 longitude:lon2];
         CLLocationDistance distance = [locA distanceFromLocation:locB];
         
-        //NSLog(@"distance is :%f", distance);
-        //NSLog(@"miles :%f", (distance/1000));
+        NSLog(@"distance is :%f", distance);
+        NSLog(@"miles :%f", (distance/1000));
         
         NSString *dString = [NSString stringWithFormat:@"%.2f", (distance/1000)];
         [distanceArray addObject:dString];
         
     }
     
-    [self.storeListTableView reloadData];
+    [self.tableView reloadData];
 }
 
 
@@ -84,14 +85,26 @@
     refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Refreshing data..."];
    
       // custom refresh logic would be placed here...
+     StoreData *_parser = [[StoreData alloc] initParserWithDelegate:self];
+     self.storeData = _parser;
+     _parser=nil;
+     [self performSelector:@selector(updateTable) withObject:nil afterDelay:2.0];
+
     
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
        [formatter setDateFormat:@"MMM d, h:mm a"];
         NSString *lastUpdated = [NSString stringWithFormat:@"Last updated on %@",[formatter stringFromDate:[NSDate date]]];
         refresh.attributedTitle = [[NSAttributedString alloc] initWithString:lastUpdated];
          [refresh endRefreshing];
+     
 }
 
+
+- (void) updateTable {
+    
+    [self.storeData getParserRequest];
+    [self.refreshControl endRefreshing];
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -137,10 +150,10 @@
     cell.storeName.text = _storeElements.Name;
     cell.storeAddress.text = _storeElements.Address;
     cell.storeDistance.text = [NSString stringWithFormat:@"%@ %@", [distanceArray objectAtIndex:indexPath.row], @"miles"];
+    
+    NSLog(@"picture Url: %@",_storeElements.PictureUrl);
     NSURL *url = [NSURL URLWithString:_storeElements.PictureUrl];
-    cell.imageView.imageURL=url;
-    
-    
+    cell.mainImageView.imageURL=url;
     
     return cell;
 }

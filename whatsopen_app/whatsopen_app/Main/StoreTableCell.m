@@ -1,15 +1,16 @@
 //
 //  StoreTableCell.m
-//  whatsopen_app
+//  POQAPP
 //
-//  Created by Jun Seki on 27/04/2013.
-//  Copyright (c) 2013 com.junseki. All rights reserved.
+//  Created by sravan jinna on 27/03/2013.
+//  Copyright (c) 2013 POQStudio. All rights reserved.
 //
 
 #import "StoreTableCell.h"
 
 @implementation StoreTableCell
-@synthesize storeName,storeDistance,storeAddress;
+    
+@synthesize storeAddress, storeDistance, storeName;
 @synthesize mainImageView;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -24,7 +25,7 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 

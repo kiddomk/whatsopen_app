@@ -29,30 +29,23 @@
 #import "AppDelegate.h"
 #import "MSNavigationPaneViewController.h"
 #import "MasterViewController.h"
+#import "CacheManager.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-#if defined(STORYBOARD)
-    self.navigationPaneViewController = (MSNavigationPaneViewController *)self.window.rootViewController;
-#else
+
     self.navigationPaneViewController = [[MSNavigationPaneViewController alloc] init];
-#endif
-    
-#if defined(STORYBOARD)
-    MasterViewController *masterViewController = (MasterViewController *)[self.navigationPaneViewController.storyboard instantiateViewControllerWithIdentifier:@"MasterViewController"];
-#else
+
     MasterViewController *masterViewController = [[MasterViewController alloc] init];
-#endif
     masterViewController.navigationPaneViewController = self.navigationPaneViewController;
     self.navigationPaneViewController.masterViewController = masterViewController;
     
-#if !defined(STORYBOARD)
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = self.navigationPaneViewController;
     [self.window makeKeyAndVisible];
-#endif
+
     
     return YES;
 }
