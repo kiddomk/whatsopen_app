@@ -19,6 +19,7 @@
 
 @synthesize storeArray, storeData, distanceArray;
 
+
 - (void)viewWillAppear:(BOOL)animated {
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:nil] forBarMetrics:UIBarMetricsDefault];
 }
@@ -39,42 +40,50 @@
     StoreData *_parser = [[StoreData alloc] initParserWithDelegate:self];
     self.storeData = _parser;
     _parser=nil;
-    [self.storeData getParserRequest];
+
+    locationManager = [[CLLocationManager alloc] init];
+    latitude = locationManager.location.coordinate.latitude;
+    lontitude = locationManager.location.coordinate.longitude;
+    
+    NSString *latlon=[NSString stringWithFormat:@"%f,%f",latitude,lontitude];
+    
+    [self.storeData getParserRequest:latlon];
+    NSLog(@"location: %@",latlon);
     
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 
 }
 
-
+//get distance on the site
 -(void)didGetParsedInfo:(NSMutableArray *)inBody {
     
     self.storeArray = inBody;
     
-    locationManager = [[CLLocationManager alloc] init];
-    distanceArray = [[NSMutableArray alloc] init];
-    
-    for(StoreElements *storeElements in inBody) {
-        
-        double lat = locationManager.location.coordinate.latitude;
-        double lon = locationManager.location.coordinate.longitude;
-        
-        
-        NSString *lat1 = storeElements.Latitude;
-        NSString *lon1 = storeElements.Longitude;
-        double lat2 = [lat1 doubleValue];
-        double lon2 = [lon1 doubleValue];
-        
-        CLLocation *locA = [[CLLocation alloc] initWithLatitude:lat longitude:lon];
-        CLLocation *locB = [[CLLocation alloc] initWithLatitude:lat2 longitude:lon2];
-        CLLocationDistance distance = [locA distanceFromLocation:locB];
-        
-        NSLog(@"distance is :%f", distance);
-        NSLog(@"miles :%f", (distance/1000));
-        
-        NSString *dString = [NSString stringWithFormat:@"%.2f", (distance/1000)];
-        [distanceArray addObject:dString];
-        
-    }
+//    locationManager = [[CLLocationManager alloc] init];
+//    distanceArray = [[NSMutableArray alloc] init];
+//    
+//    for(StoreElements *storeElements in inBody) {
+//        
+//        double lat = locationManager.location.coordinate.latitude;
+//        double lon = locationManager.location.coordinate.longitude;
+//        
+//        
+//        NSString *lat1 = storeElements.Latitude;
+//        NSString *lon1 = storeElements.Longitude;
+//        double lat2 = [lat1 doubleValue];
+//        double lon2 = [lon1 doubleValue];
+//        
+//        CLLocation *locA = [[CLLocation alloc] initWithLatitude:lat longitude:lon];
+//        CLLocation *locB = [[CLLocation alloc] initWithLatitude:lat2 longitude:lon2];
+//        CLLocationDistance distance = [locA distanceFromLocation:locB];
+//        
+//        NSLog(@"distance is :%f", distance);
+//        NSLog(@"miles :%f", (distance/1000));
+//        
+//        NSString *dString = [NSString stringWithFormat:@"%.2f", (distance/1000)];
+//        [distanceArray addObject:dString];
+//        
+//    }
     
     [self.tableView reloadData];
 }
@@ -84,7 +93,11 @@
  -(void)refreshView:(UIRefreshControl *)refresh {
     refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Refreshing data..."];
    
-      // custom refresh logic would be placed here...
+      //get new geo location
+     locationManager = [[CLLocationManager alloc] init];
+     latitude = locationManager.location.coordinate.latitude;
+     lontitude = locationManager.location.coordinate.longitude;
+     
      StoreData *_parser = [[StoreData alloc] initParserWithDelegate:self];
      self.storeData = _parser;
      _parser=nil;
@@ -101,8 +114,8 @@
 
 
 - (void) updateTable {
-    
-    [self.storeData getParserRequest];
+    NSString *latlon=[NSString stringWithFormat:@"%f,%f",latitude,lontitude];
+    [self.storeData getParserRequest:latlon];
     [self.refreshControl endRefreshing];
 }
 
@@ -152,7 +165,8 @@
     
    // [cell.storeAddress setFont:[UIFont fontWithName:@"Proxima Nova" size:16]];
     cell.venueTypeLabel.text = _storeElements.VenueType;
-    cell.storeDistance.text = [NSString stringWithFormat:@"%@ %@", [distanceArray objectAtIndex:indexPath.row], @"miles"];
+    cell.storeDistance.text =[NSString stringWithFormat:@"%@ %@", _storeElements.Distance, @"miles"];
+    //[NSString stringWithFormat:@"%@ %@", [distanceArray objectAtIndex:indexPath.row], @"miles"];
     
     //#hard coded closing time
     //cell.closingTimeLabel.text=_storeElements.SundayCloseTime;

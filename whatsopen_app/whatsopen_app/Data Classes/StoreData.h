@@ -30,7 +30,7 @@
 
 #pragma mark -
 
--(void)getParserRequest;
+-(void)getParserRequest:(NSString *)latlon;
 //-(void)parseRequest:(id)inResults;
 
 @end

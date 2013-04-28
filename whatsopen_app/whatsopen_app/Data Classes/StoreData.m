@@ -8,6 +8,8 @@
 
 #import "StoreData.h"
 #import "ApplicationConstants.h"
+#import <CoreLocation/CLAvailability.h>
+#import <CoreLocation/CLLocation.h>
 
 @interface StoreData()
 @property (nonatomic, retain) NSObject <StoreRequestDelegate> *delegate;
@@ -35,9 +37,11 @@
     // }
 }
 #pragma mark -
--(void)getParserRequest;{
+-(void)getParserRequest:(NSString *)latlon;{
     
-    NSURL *url = [NSURL URLWithString:kURL];
+    NSString *newUrl = [NSString stringWithFormat:@"%@%@",kURL,latlon];
+    //NSString *newUrl = kURL;
+    NSURL *url = [NSURL URLWithString:newUrl];
     request=[NSMutableURLRequest requestWithURL:url
                                     cachePolicy:NSURLRequestUseProtocolCachePolicy
                                 timeoutInterval:10.0];

@@ -10,4 +10,7 @@
 
 
 //store
-NSString *kURL=@"http://7df66b0675794912a077e44c833e3b6c.cloudapp.net/api/getstore";
+//NSString *kURL=@"http://7df66b0675794912a077e44c833e3b6c.cloudapp.net/api/getstore/";
+
+//post new store string
+NSString *kURL=@"http://7df66b0675794912a077e44c833e3b6c.cloudapp.net/api/getstore/closest/";

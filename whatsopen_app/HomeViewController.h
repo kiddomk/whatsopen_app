@@ -13,14 +13,17 @@
 
 @interface HomeViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource> {
     
-
+    
     StoreData *storeData;
     CLLocationManager *locationManager;
+    double latitude;
+    double lontitude;
 }
 
 @property (nonatomic, retain) StoreData *storeData;
 @property (nonatomic, retain) NSMutableArray *storeArray;
 
 @property (nonatomic, retain) NSMutableArray *distanceArray;
+
 
 @end
