@@ -21,25 +21,23 @@
 @property (nonatomic, retain) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, retain) StoreElements *storeElements;
 
-@property (nonatomic, retain) IBOutlet UILabel *address;
-@property (nonatomic, retain) IBOutlet UILabel *address2;
-@property (nonatomic, retain) IBOutlet UILabel *city;
-@property (nonatomic, retain) IBOutlet UILabel *county;
-@property (nonatomic, retain) IBOutlet UILabel *postCode;
-@property (nonatomic, retain) IBOutlet UILabel *mondayOpen;
-@property (nonatomic, retain) IBOutlet UILabel *mondayClose;
-@property (nonatomic, retain) IBOutlet UILabel *tuesdayOpen;
-@property (nonatomic, retain) IBOutlet UILabel *tuesdayClose;
-@property (nonatomic, retain) IBOutlet UILabel *wednesdayOpen;
-@property (nonatomic, retain) IBOutlet UILabel *wednesdayClose;
-@property (nonatomic, retain) IBOutlet UILabel *thursdayOpen;
-@property (nonatomic, retain) IBOutlet UILabel *thursdayClose;
-@property (nonatomic, retain) IBOutlet UILabel *fridayOpen;
-@property (nonatomic, retain) IBOutlet UILabel *fridayClose;
-@property (nonatomic, retain) IBOutlet UILabel *saturdatOpen;
-@property (nonatomic, retain) IBOutlet UILabel *saturdayClose;
+@property (nonatomic, retain) IBOutlet UILabel *closingTime;
+@property (nonatomic, retain) IBOutlet UILabel *timeLeft;
+
+@property (nonatomic, retain) IBOutlet UILabel *name;
 @property (nonatomic, retain) IBOutlet UILabel *venueType;
-@property (nonatomic, retain) IBOutlet UILabel *rating;
+@property (nonatomic, retain) IBOutlet UILabel *distance;
+
+@property (nonatomic, retain) IBOutlet UILabel *address;
+
+@property (nonatomic, retain) IBOutlet UILabel *city;
+
+@property (nonatomic, retain) IBOutlet UILabel *postCode;
+@property (nonatomic, retain) IBOutlet UILabel *telephone;
+
+@property (nonatomic, retain) IBOutlet UITextView *notes;
+
+@property (nonatomic, retain) IBOutlet UIImageView *ratingImageView;
 @property (nonatomic, retain) IBOutlet UILabel *neighborhoods;
 
 //VenueType: "Bar",

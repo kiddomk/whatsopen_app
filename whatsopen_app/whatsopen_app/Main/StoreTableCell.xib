@@ -59,7 +59,7 @@
 								<int key="IBUIContentMode">2</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<object class="NSCustomResource" key="IBUIImage" id="58201080">
+								<object class="NSCustomResource" key="IBUIImage" id="1000837278">
 									<string key="NSClassName">NSImage</string>
 									<string key="NSResourceName">Loading-screen.png</string>
 								</object>
@@ -81,7 +81,6 @@
 								<string key="NSFrame">{{5, 245}, {310, 6}}</string>
 								<reference key="NSSuperview" ref="743842204"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<int key="IBUIContentMode">1</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
@@ -102,7 +101,7 @@
 								<int key="IBUIContentMode">1</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<reference key="IBUIImage" ref="58201080"/>
+								<reference key="IBUIImage" ref="1000837278"/>
 							</object>
 							<object class="IBUILabel" id="27011979">
 								<reference key="NSNextResponder" ref="743842204"/>
@@ -120,7 +119,7 @@
 								<string key="IBUIText">Name</string>
 								<reference key="IBUITextColor" ref="651560412"/>
 								<reference key="IBUIHighlightedColor" ref="651560412"/>
-								<object class="NSColor" key="IBUIShadowColor" id="376220717">
+								<object class="NSColor" key="IBUIShadowColor" id="851326838">
 									<int key="NSColorSpace">3</int>
 									<bytes key="NSWhite">MC4zMzMzMzMzMzMzAA</bytes>
 								</object>
@@ -156,7 +155,7 @@
 								<string key="IBUIText">venueType</string>
 								<reference key="IBUITextColor" ref="651560412"/>
 								<reference key="IBUIHighlightedColor" ref="651560412"/>
-								<reference key="IBUIShadowColor" ref="376220717"/>
+								<reference key="IBUIShadowColor" ref="851326838"/>
 								<string key="IBUIShadowOffset">{1, 1}</string>
 								<int key="IBUIBaselineAdjustment">0</int>
 								<object class="IBUIFontDescription" key="IBUIFontDescription">
@@ -188,7 +187,7 @@
 								<string key="IBUIText">distance</string>
 								<reference key="IBUITextColor" ref="651560412"/>
 								<reference key="IBUIHighlightedColor" ref="651560412"/>
-								<reference key="IBUIShadowColor" ref="376220717"/>
+								<reference key="IBUIShadowColor" ref="851326838"/>
 								<string key="IBUIShadowOffset">{1, 1}</string>
 								<int key="IBUIBaselineAdjustment">0</int>
 								<float key="IBUIMinimumScaleFactor">0.5</float>
@@ -222,7 +221,7 @@
 								<string key="IBUIText">Closing Time</string>
 								<reference key="IBUITextColor" ref="651560412"/>
 								<reference key="IBUIHighlightedColor" ref="651560412"/>
-								<reference key="IBUIShadowColor" ref="376220717"/>
+								<reference key="IBUIShadowColor" ref="851326838"/>
 								<string key="IBUIShadowOffset">{1, 1}</string>
 								<int key="IBUIBaselineAdjustment">0</int>
 								<float key="IBUIMinimumScaleFactor">0.5</float>
@@ -381,7 +380,7 @@
 								<float key="scoringTypeFloat">24</float>
 								<int key="contentType">2</int>
 							</object>
-							<object class="IBNSLayoutConstraint" id="27708047">
+							<object class="IBNSLayoutConstraint" id="620939693">
 								<reference key="firstItem" ref="207204593"/>
 								<int key="firstAttribute">6</int>
 								<int key="relation">0</int>
@@ -429,7 +428,7 @@
 								<float key="scoringTypeFloat">24</float>
 								<int key="contentType">2</int>
 							</object>
-							<object class="IBNSLayoutConstraint" id="861942919">
+							<object class="IBNSLayoutConstraint" id="491070002">
 								<reference key="firstItem" ref="207204593"/>
 								<int key="firstAttribute">6</int>
 								<int key="relation">0</int>
@@ -445,7 +444,7 @@
 								<float key="scoringTypeFloat">29</float>
 								<int key="contentType">3</int>
 							</object>
-							<object class="IBNSLayoutConstraint" id="633462095">
+							<object class="IBNSLayoutConstraint" id="310613182">
 								<reference key="firstItem" ref="4100894"/>
 								<int key="firstAttribute">3</int>
 								<int key="relation">0</int>
@@ -461,7 +460,7 @@
 								<float key="scoringTypeFloat">9</float>
 								<int key="contentType">3</int>
 							</object>
-							<object class="IBNSLayoutConstraint" id="612278821">
+							<object class="IBNSLayoutConstraint" id="214044050">
 								<reference key="firstItem" ref="311479458"/>
 								<int key="firstAttribute">5</int>
 								<int key="relation">0</int>
@@ -1028,17 +1027,17 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">248</int>
-						<reference key="object" ref="612278821"/>
+						<reference key="object" ref="214044050"/>
 						<reference key="parent" ref="207204593"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">252</int>
-						<reference key="object" ref="633462095"/>
+						<reference key="object" ref="310613182"/>
 						<reference key="parent" ref="207204593"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">253</int>
-						<reference key="object" ref="861942919"/>
+						<reference key="object" ref="491070002"/>
 						<reference key="parent" ref="207204593"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -1048,7 +1047,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">256</int>
-						<reference key="object" ref="27708047"/>
+						<reference key="object" ref="620939693"/>
 						<reference key="parent" ref="207204593"/>
 					</object>
 				</array>
@@ -1094,12 +1093,12 @@
 					<reference ref="100821370"/>
 					<reference ref="563701933"/>
 					<reference ref="370775968"/>
-					<reference ref="612278821"/>
-					<reference ref="633462095"/>
-					<reference ref="861942919"/>
+					<reference ref="214044050"/>
+					<reference ref="310613182"/>
+					<reference ref="491070002"/>
 					<reference ref="374875862"/>
 					<reference ref="898180134"/>
-					<reference ref="27708047"/>
+					<reference ref="620939693"/>
 					<reference ref="332006639"/>
 					<reference ref="78454761"/>
 					<reference ref="870827449"/>

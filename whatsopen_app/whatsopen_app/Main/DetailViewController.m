@@ -19,23 +19,35 @@
 
 @synthesize mapView, scrollView;
 @synthesize storeElements;
-@synthesize address, address2, city, county, postCode;
-@synthesize mondayOpen, mondayClose, tuesdayOpen, tuesdayClose, wednesdayOpen, wednesdayClose, thursdayOpen, thursdayClose, fridayOpen, fridayClose, saturdatOpen, saturdayClose;
-@synthesize venueType,rating,neighborhoods,imageView;
+
+@synthesize imageView,closingTime,timeLeft,name,venueType,distance,address,city,postCode,telephone,notes,ratingImageView,neighborhoods;
+
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+
     }
     return self;
+}
+-(void)viewWillAppear:(BOOL)animated{
+           [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbar.png"] forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //change button
+    UIImage *buttonImage = [UIImage imageNamed:@"arrow.png"];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setImage:buttonImage forState:UIControlStateNormal];
+    button.frame = CGRectMake(0, 0, buttonImage.size.width, buttonImage.size.height);
+    [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *customBarItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.navigationItem.leftBarButtonItem = customBarItem;
+    
     self.navigationItem.title = self.storeElements.Name;
     
     mapView.delegate = self;
@@ -84,28 +96,54 @@
     scrollView.bounces = YES;
     scrollView.bouncesZoom = NO;
     
+    //closingTime,timeLeft,,
+    //,,,,,,,,;
+    name.text=self.storeElements.Name;
     address.text = self.storeElements.Address;
-    address2.text = self.storeElements.Address2;
-    city.text = self.storeElements.City;
-    county.text = self.storeElements.County;
-    postCode.text = self.storeElements.PostCode;
-    mondayOpen.text = self.storeElements.MondayOpenTime;
-    mondayClose.text = self.storeElements.MondayCloseTime;
-    tuesdayOpen.text = self.storeElements.TuesdayOpenTime;
-    tuesdayClose.text = self.storeElements.TuesdayCloseTime;
-    wednesdayOpen.text = self.storeElements.WednesdayOpenTime;
-    wednesdayClose.text = self.storeElements.WednesdayCloseTime;
-    thursdayOpen.text = self.storeElements.ThursdayOpenTime;
-    thursdayClose.text = self.storeElements.ThursdayCloseTime;
-    fridayOpen.text = self.storeElements.FridayOpenTime;
-    fridayClose.text = self.storeElements.FridayCloseTime;
-    saturdatOpen.text = self.storeElements.SaturdayOpenTime;
-    saturdayClose.text = self.storeElements.SaturdayCloseTime;
     venueType.text = self.storeElements.VenueType;
-    rating.text=[NSString stringWithFormat:@"%@", storeElements.Rating];
+    city.text = self.storeElements.City;
+    distance.text=[NSString stringWithFormat:@"%@",self.storeElements.Distance];
+    postCode.text = self.storeElements.PostCode;
+    telephone.text = self.storeElements.Phone;
+    notes.text=self.storeElements.Notes;
+    venueType.text = self.storeElements.VenueType;
+    
     neighborhoods.text = self.storeElements.Neighborhoods;
     NSURL *url = [NSURL URLWithString:self.storeElements.PictureUrl];
     imageView.imageURL=url;
+    
+    //closingTime.text=self.storeElements.ClosingTime;
+    //timeLeft.text=self.storeElements.TimeLeft;
+    
+    //rating
+    UIImage *image;
+    double ratingNumber = [self.storeElements.Rating doubleValue];
+    
+    if (ratingNumber==0.5||ratingNumber==1.0) {
+        image= [UIImage imageNamed: @"1star.png"];
+    }
+    else if (ratingNumber==1.5||ratingNumber==2.0)
+    {
+        image= [UIImage imageNamed: @"2star.png"];
+    }
+    else if (ratingNumber==2.5||ratingNumber==3.0)
+    {
+        image= [UIImage imageNamed: @"3star.png"];
+    }
+    else if (ratingNumber==3.5||ratingNumber==4.0)
+    {
+        image= [UIImage imageNamed: @"4star.png"];
+    }
+    else if (ratingNumber==4.5||ratingNumber==5.0)
+    {
+        image= [UIImage imageNamed: @"5star.png"];
+    }
+    [ratingImageView setImage:image];
+
+   
+}
+- (void) back {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)aScrollView {
@@ -126,7 +164,7 @@
     
     annotationCoord.latitude = latitude;
     annotationCoord.longitude = longitude;
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(annotationCoord, 5*METERS_PER_MILE, 5*METERS_PER_MILE);
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(annotationCoord, 2*METERS_PER_MILE, 2*METERS_PER_MILE);
     [self.mapView setRegion:[self.mapView regionThatFits:viewRegion] animated:YES];
 }
 

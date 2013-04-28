@@ -49,6 +49,11 @@
 		E01546CB172D251B00280CB6 /* Proxima Nova Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = E01546A1172D251B00280CB6 /* Proxima Nova Thin.otf */; };
 		E01546CC172D251B00280CB6 /* Proxima Nova Xbold It.otf in Resources */ = {isa = PBXBuildFile; fileRef = E01546A2172D251B00280CB6 /* Proxima Nova Xbold It.otf */; };
 		E01546CD172D251B00280CB6 /* Proxima Nova Xbold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E01546A3172D251B00280CB6 /* Proxima Nova Xbold.otf */; };
+		E01546D0172D457E00280CB6 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = E01546CE172D457E00280CB6 /* arrow.png */; };
+		E01546D1172D457E00280CB6 /* alert.png in Resources */ = {isa = PBXBuildFile; fileRef = E01546CF172D457E00280CB6 /* alert.png */; };
+		E01546D3172D4C8100280CB6 /* navbar@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = E01546D2172D4C8100280CB6 /* navbar@2X.png */; };
+		E01546D5172D4DB700280CB6 /* navbar.png in Resources */ = {isa = PBXBuildFile; fileRef = E01546D4172D4DB700280CB6 /* navbar.png */; };
+		E01546D9172D517F00280CB6 /* directionButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E01546D8172D517F00280CB6 /* directionButton.png */; };
 		E031CE00172C8AFC00571228 /* StoreTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E031CDFD172C8AFC00571228 /* StoreTableCell.xib */; };
 		E031CE01172C8AFC00571228 /* StoreTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E031CDFF172C8AFC00571228 /* StoreTableCell.m */; };
 		E031CE33172C921400571228 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E031CE21172C921400571228 /* AFHTTPClient.m */; };
@@ -170,6 +175,11 @@
 		E01546A1172D251B00280CB6 /* Proxima Nova Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Thin.otf"; sourceTree = "<group>"; };
 		E01546A2172D251B00280CB6 /* Proxima Nova Xbold It.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Xbold It.otf"; sourceTree = "<group>"; };
 		E01546A3172D251B00280CB6 /* Proxima Nova Xbold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Xbold.otf"; sourceTree = "<group>"; };
+		E01546CE172D457E00280CB6 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
+		E01546CF172D457E00280CB6 /* alert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alert.png; sourceTree = "<group>"; };
+		E01546D2172D4C8100280CB6 /* navbar@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar@2X.png"; sourceTree = "<group>"; };
+		E01546D4172D4DB700280CB6 /* navbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbar.png; sourceTree = "<group>"; };
+		E01546D8172D517F00280CB6 /* directionButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = directionButton.png; sourceTree = "<group>"; };
 		E031CDFD172C8AFC00571228 /* StoreTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StoreTableCell.xib; path = whatsopen_app/Main/StoreTableCell.xib; sourceTree = "<group>"; };
 		E031CDFE172C8AFC00571228 /* StoreTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreTableCell.h; path = whatsopen_app/Main/StoreTableCell.h; sourceTree = "<group>"; };
 		E031CDFF172C8AFC00571228 /* StoreTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreTableCell.m; path = whatsopen_app/Main/StoreTableCell.m; sourceTree = "<group>"; };
@@ -512,6 +522,11 @@
 		E0CCB6BD172C0DC500835420 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E01546D8172D517F00280CB6 /* directionButton.png */,
+				E01546D4172D4DB700280CB6 /* navbar.png */,
+				E01546D2172D4C8100280CB6 /* navbar@2X.png */,
+				E01546CE172D457E00280CB6 /* arrow.png */,
+				E01546CF172D457E00280CB6 /* alert.png */,
 				E031CE46172CB2E300571228 /* 1star.png */,
 				E031CE47172CB2E300571228 /* 3star.png */,
 				E031CE48172CB2E300571228 /* 2star.png */,
@@ -636,7 +651,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = com.junseki;
 			};
-			buildConfigurationList = E0CCB653172C048500835420 /* Build configuration list for PBXProject "whatsopen_app" */;
+			buildConfigurationList = E0CCB653172C048500835420 /* Build configuration list for PBXProject "afterhours" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -731,6 +746,11 @@
 				E01546CB172D251B00280CB6 /* Proxima Nova Thin.otf in Resources */,
 				E01546CC172D251B00280CB6 /* Proxima Nova Xbold It.otf in Resources */,
 				E01546CD172D251B00280CB6 /* Proxima Nova Xbold.otf in Resources */,
+				E01546D0172D457E00280CB6 /* arrow.png in Resources */,
+				E01546D1172D457E00280CB6 /* alert.png in Resources */,
+				E01546D3172D4C8100280CB6 /* navbar@2X.png in Resources */,
+				E01546D5172D4DB700280CB6 /* navbar.png in Resources */,
+				E01546D9172D517F00280CB6 /* directionButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -877,7 +897,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E0CCB653172C048500835420 /* Build configuration list for PBXProject "whatsopen_app" */ = {
+		E0CCB653172C048500835420 /* Build configuration list for PBXProject "afterhours" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E0CCB67C172C048500835420 /* Debug */,

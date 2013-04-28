@@ -82,6 +82,9 @@ typedef NS_ENUM(NSUInteger, MasterViewControllerTableViewSectionType) {
     }
     return self;
 }
+-(void)viewWillAppear:(BOOL)animated{
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbar.png"] forBarMetrics:UIBarMetricsDefault];
+}
 
 - (void)viewDidLoad
 {
@@ -111,7 +114,7 @@ typedef NS_ENUM(NSUInteger, MasterViewControllerTableViewSectionType) {
 {
     self.paneViewControllerType = NSUIntegerMax;
     self.paneViewControllerTitles = @{
-                                      @(MSPaneViewControllerTypeHome) : @"Bars",
+                                      @(MSPaneViewControllerTypeHome) : @"After Hours",
                                       @(MSPaneViewControllerTypeClubs) : @"Clubs",
                                       @(MSPaneViewControllerTypeRestaurants) : @"Restaurants",
                                       @(MSPaneViewControllerTypeControls) : @"Settings",
@@ -171,7 +174,19 @@ typedef NS_ENUM(NSUInteger, MasterViewControllerTableViewSectionType) {
     
     paneViewController.navigationItem.title = self.paneViewControllerTitles[@(paneViewControllerType)];
     
-    self.paneRevealBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"MSBarButtonIconNavigationPane.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(navigationPaneRevealBarButtonItemTapped:)];
+    //change button
+    UIImage *buttonImage = [UIImage imageNamed:@"MSBarButtonIconNavigationPane.png"];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setImage:buttonImage forState:UIControlStateNormal];
+    button.frame = CGRectMake(00, 0, buttonImage.size.width, buttonImage.size.height);
+    [button addTarget:self action:@selector(navigationPaneRevealBarButtonItemTapped:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *customBarItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    
+    self.paneRevealBarButtonItem =customBarItem;
+    
+    //[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"MSBarButtonIconNavigationPane.png"] style:UIBarButtonItemStylePlain target:self action:@selector(navigationPaneRevealBarButtonItemTapped:)];
+    
+    
     paneViewController.navigationItem.leftBarButtonItem = self.paneRevealBarButtonItem;
         
     UINavigationController *paneNavigationViewController = [[UINavigationController alloc] initWithRootViewController:paneViewController];
