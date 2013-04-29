@@ -20,7 +20,7 @@
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
-	<string>Huckleberry-Lab.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>huckleberrylabe.afterhours</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
