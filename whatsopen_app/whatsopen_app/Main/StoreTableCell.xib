@@ -2,9 +2,9 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1552</int>
-		<string key="IBDocument.SystemVersion">12D78</string>
+		<string key="IBDocument.SystemVersion">12E55</string>
 		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
-		<string key="IBDocument.AppKitVersion">1187.37</string>
+		<string key="IBDocument.AppKitVersion">1187.39</string>
 		<string key="IBDocument.HIToolboxVersion">626.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -70,7 +70,7 @@
 								<string key="NSFrame">{{10, 6}, {300, 235}}</string>
 								<reference key="NSSuperview" ref="743842204"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="4100894"/>
+								<reference key="NSNextKeyView" ref="935072116"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -110,7 +110,7 @@
 								<string key="NSFrame">{{215, 18}, {20, 20}}</string>
 								<reference key="NSSuperview" ref="743842204"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="624784425"/>
+								<reference key="NSNextKeyView" ref="4100894"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -242,7 +242,7 @@
 								<string key="NSFrame">{{215, 18}, {85, 21}}</string>
 								<reference key="NSSuperview" ref="743842204"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView" ref="935072116"/>
+								<reference key="NSNextKeyView" ref="624784425"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -1002,11 +1002,6 @@
 						<reference key="parent" ref="207204593"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">192</int>
-						<reference key="object" ref="452999035"/>
-						<reference key="parent" ref="766616309"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">206</int>
 						<reference key="object" ref="94267373"/>
 						<array class="NSMutableArray" key="children">
@@ -1200,11 +1195,6 @@
 						<reference key="parent" ref="624784425"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">286</int>
-						<reference key="object" ref="413622767"/>
-						<reference key="parent" ref="207204593"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">287</int>
 						<reference key="object" ref="1056853108"/>
 						<reference key="parent" ref="207204593"/>
@@ -1222,16 +1212,6 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">291</int>
 						<reference key="object" ref="659552422"/>
-						<reference key="parent" ref="207204593"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">235</int>
-						<reference key="object" ref="302551332"/>
-						<reference key="parent" ref="674160236"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">256</int>
-						<reference key="object" ref="620939693"/>
 						<reference key="parent" ref="207204593"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -1262,6 +1242,26 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">308</int>
 						<reference key="object" ref="452169477"/>
+						<reference key="parent" ref="207204593"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">235</int>
+						<reference key="object" ref="302551332"/>
+						<reference key="parent" ref="674160236"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">286</int>
+						<reference key="object" ref="413622767"/>
+						<reference key="parent" ref="207204593"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">192</int>
+						<reference key="object" ref="452999035"/>
+						<reference key="parent" ref="766616309"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">256</int>
+						<reference key="object" ref="620939693"/>
 						<reference key="parent" ref="207204593"/>
 					</object>
 				</array>
@@ -1395,7 +1395,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">308</int>
+			<int key="maxID">314</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

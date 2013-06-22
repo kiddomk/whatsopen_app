@@ -97,7 +97,7 @@
 		E0CCB670172C048500835420 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0CCB66F172C048500835420 /* Default@2x.png */; };
 		E0CCB672172C048500835420 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0CCB671172C048500835420 /* Default-568h@2x.png */; };
 		E0CCB69E172C0A8000835420 /* MSNavigationPaneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCB69D172C0A7F00835420 /* MSNavigationPaneViewController.m */; };
-		E0CCB6AD172C0AFC00835420 /* OtherControlsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCB6A3172C0AFC00835420 /* OtherControlsViewController.m */; };
+		E0CCB6AD172C0AFC00835420 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCB6A3172C0AFC00835420 /* SettingsViewController.m */; };
 		E0CCB6AE172C0AFC00835420 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCB6A4172C0AFC00835420 /* MasterViewController.m */; };
 		E0CCB6AF172C0AFC00835420 /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCB6A8172C0AFC00835420 /* AboutUsViewController.m */; };
 		E0CCB6B0172C0AFC00835420 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCB6AA172C0AFC00835420 /* AppDelegate.m */; };
@@ -134,6 +134,7 @@
 		E0CCB75B172C6F8100835420 /* DownloadLightWeight.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCB758172C6F8100835420 /* DownloadLightWeight.m */; };
 		E0CCB760172C77F900835420 /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCB75F172C77F900835420 /* AsyncImageView.m */; };
 		E0CCB766172C7D8300835420 /* CacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCB765172C7D8300835420 /* CacheManager.m */; };
+		E0E82321177644B9003B5F76 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0E82320177644B9003B5F76 /* SettingsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -230,7 +231,7 @@
 		E097D74B172D53BC00587EB4 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../../Icon@2x.png"; sourceTree = "<group>"; };
 		E097D74D172D54DD00587EB4 /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock.png; sourceTree = "<group>"; };
 		E097D74E172D54DD00587EB4 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
-		E0CCB658172C048500835420 /* whatsopen_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = whatsopen_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0CCB658172C048500835420 /* afterhours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = afterhours.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0CCB65B172C048500835420 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E0CCB65D172C048500835420 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E0CCB65F172C048500835420 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -243,9 +244,9 @@
 		E0CCB671172C048500835420 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		E0CCB69C172C0A7F00835420 /* MSNavigationPaneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSNavigationPaneViewController.h; path = Library/MSNavigationPaneViewController.h; sourceTree = "<group>"; };
 		E0CCB69D172C0A7F00835420 /* MSNavigationPaneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSNavigationPaneViewController.m; path = Library/MSNavigationPaneViewController.m; sourceTree = "<group>"; };
-		E0CCB6A3172C0AFC00835420 /* OtherControlsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OtherControlsViewController.m; path = whatsopen_app/Main/OtherControlsViewController.m; sourceTree = "<group>"; };
+		E0CCB6A3172C0AFC00835420 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = whatsopen_app/Main/SettingsViewController.m; sourceTree = "<group>"; };
 		E0CCB6A4172C0AFC00835420 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MasterViewController.m; path = whatsopen_app/Main/MasterViewController.m; sourceTree = "<group>"; };
-		E0CCB6A5172C0AFC00835420 /* OtherControlsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OtherControlsViewController.h; path = whatsopen_app/Main/OtherControlsViewController.h; sourceTree = "<group>"; };
+		E0CCB6A5172C0AFC00835420 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = whatsopen_app/Main/SettingsViewController.h; sourceTree = "<group>"; };
 		E0CCB6A6172C0AFC00835420 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MasterViewController.h; path = whatsopen_app/Main/MasterViewController.h; sourceTree = "<group>"; };
 		E0CCB6A7172C0AFC00835420 /* AboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutUsViewController.h; path = whatsopen_app/Main/AboutUsViewController.h; sourceTree = "<group>"; };
 		E0CCB6A8172C0AFC00835420 /* AboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutUsViewController.m; path = whatsopen_app/Main/AboutUsViewController.m; sourceTree = "<group>"; };
@@ -306,6 +307,7 @@
 		E0CCB75F172C77F900835420 /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
 		E0CCB764172C7D8200835420 /* CacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CacheManager.h; path = "App Constants/CacheManager.h"; sourceTree = "<group>"; };
 		E0CCB765172C7D8300835420 /* CacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CacheManager.m; path = "App Constants/CacheManager.m"; sourceTree = "<group>"; };
+		E0E82320177644B9003B5F76 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsViewController.xib; path = whatsopen_app/Main/SettingsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -416,7 +418,7 @@
 		E0CCB659172C048500835420 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E0CCB658172C048500835420 /* whatsopen_app.app */,
+				E0CCB658172C048500835420 /* afterhours.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -497,11 +499,12 @@
 				E0CCB6F1172C228000835420 /* HomeViewController.xib */,
 				E0CCB6A6172C0AFC00835420 /* MasterViewController.h */,
 				E0CCB6A4172C0AFC00835420 /* MasterViewController.m */,
-				E0CCB6A5172C0AFC00835420 /* OtherControlsViewController.h */,
-				E0CCB6A3172C0AFC00835420 /* OtherControlsViewController.m */,
+				E0CCB6A5172C0AFC00835420 /* SettingsViewController.h */,
+				E0CCB6A3172C0AFC00835420 /* SettingsViewController.m */,
 				E0CCB703172C410A00835420 /* RestaurantsViewController.h */,
 				E0CCB704172C410A00835420 /* RestaurantsViewController.m */,
 				E0CCB705172C410A00835420 /* RestaurantsViewController.xib */,
+				E0E82320177644B9003B5F76 /* SettingsViewController.xib */,
 			);
 			name = Main;
 			path = ..;
@@ -637,9 +640,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E0CCB657172C048500835420 /* whatsopen_app */ = {
+		E0CCB657172C048500835420 /* afterhours */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E0CCB67E172C048500835420 /* Build configuration list for PBXNativeTarget "whatsopen_app" */;
+			buildConfigurationList = E0CCB67E172C048500835420 /* Build configuration list for PBXNativeTarget "afterhours" */;
 			buildPhases = (
 				E0CCB654172C048500835420 /* Sources */,
 				E0CCB655172C048500835420 /* Frameworks */,
@@ -649,9 +652,9 @@
 			);
 			dependencies = (
 			);
-			name = whatsopen_app;
+			name = afterhours;
 			productName = whatsopen_app;
-			productReference = E0CCB658172C048500835420 /* whatsopen_app.app */;
+			productReference = E0CCB658172C048500835420 /* afterhours.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -675,7 +678,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E0CCB657172C048500835420 /* whatsopen_app */,
+				E0CCB657172C048500835420 /* afterhours */,
 			);
 		};
 /* End PBXProject section */
@@ -767,6 +770,7 @@
 				E097D74C172D53BC00587EB4 /* Icon@2x.png in Resources */,
 				E097D74F172D54DD00587EB4 /* clock.png in Resources */,
 				E097D750172D54DD00587EB4 /* pin.png in Resources */,
+				E0E82321177644B9003B5F76 /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -779,7 +783,7 @@
 			files = (
 				E0CCB668172C048500835420 /* main.m in Sources */,
 				E0CCB69E172C0A8000835420 /* MSNavigationPaneViewController.m in Sources */,
-				E0CCB6AD172C0AFC00835420 /* OtherControlsViewController.m in Sources */,
+				E0CCB6AD172C0AFC00835420 /* SettingsViewController.m in Sources */,
 				E0CCB6AE172C0AFC00835420 /* MasterViewController.m in Sources */,
 				E0CCB6AF172C0AFC00835420 /* AboutUsViewController.m in Sources */,
 				E0CCB6B0172C0AFC00835420 /* AppDelegate.m in Sources */,
@@ -856,7 +860,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -883,7 +887,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -930,7 +934,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E0CCB67E172C048500835420 /* Build configuration list for PBXNativeTarget "whatsopen_app" */ = {
+		E0CCB67E172C048500835420 /* Build configuration list for PBXNativeTarget "afterhours" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E0CCB67F172C048500835420 /* Debug */,

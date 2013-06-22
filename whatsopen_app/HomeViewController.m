@@ -31,17 +31,28 @@
    
     
     UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
-    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull to Refresh"];
+    
     [refresh addTarget:self
                 action:@selector(refreshView:)
                  forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refresh;
     
+    /**initialize location manager**/
+    if (nil == locationManager)
+        locationManager = [[CLLocationManager alloc] init];
+    
+    //set the delegate for the location manager
+    //locationManager.delegate = self;
+    // set your desired accuracy
+    locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+    
+    [locationManager startUpdatingLocation];
+    
     StoreData *_parser = [[StoreData alloc] initParserWithDelegate:self];
     self.storeData = _parser;
     _parser=nil;
 
-    locationManager = [[CLLocationManager alloc] init];
+    
     latitude = locationManager.location.coordinate.latitude;
     lontitude = locationManager.location.coordinate.longitude;
     

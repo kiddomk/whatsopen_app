@@ -30,7 +30,7 @@
 #import "HomeViewController.h"
 #import "ClubsViewController.h"
 #import "RestaurantsViewController.h"
-#import "OtherControlsViewController.h"
+#import "SettingsViewController.h"
 #import "AboutUsViewController.h"
 #import <netinet/in.h>
 #import <SystemConfiguration/SystemConfiguration.h>
@@ -126,7 +126,7 @@ typedef NS_ENUM(NSUInteger, MasterViewControllerTableViewSectionType) {
         @(MSPaneViewControllerTypeHome) : HomeViewController.class,
         @(MSPaneViewControllerTypeClubs): ClubsViewController.class,
         @(MSPaneViewControllerTypeRestaurants):RestaurantsViewController.class,
-        @(MSPaneViewControllerTypeControls) : OtherControlsViewController.class,
+        @(MSPaneViewControllerTypeControls) : SettingsViewController.class,
         @(MSPaneViewControllerTypeAboutUs) : AboutUsViewController.class
     };
 

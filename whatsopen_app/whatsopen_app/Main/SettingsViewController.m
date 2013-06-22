@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Monospace Ltd. All rights reserved.
 //
 
-#import "OtherControlsViewController.h"
+#import "SettingsViewController.h"
 
-@interface OtherControlsViewController ()
+@interface SettingsViewController ()
 
 @property (nonatomic, strong) UILabel *controlDescription;
 @property (nonatomic, strong) UISwitch *exampleSwitch;
@@ -16,13 +16,15 @@
 
 @end
 
-@implementation OtherControlsViewController
+@implementation SettingsViewController
 
 #pragma mark - UIViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
     
     self.view.backgroundColor = [UIColor whiteColor];
     
