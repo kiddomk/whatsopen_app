@@ -85,8 +85,8 @@
     
     //scroll view start
     scrollView.pagingEnabled = NO;
-    scrollView.contentSize = CGSizeMake(320, 600);
-    scrollView.contentInset = UIEdgeInsetsMake(0.0, 0.0, 100.0, 0.0);
+   // scrollView.contentSize = CGSizeMake(320, 568);
+   // scrollView.contentInset = UIEdgeInsetsMake(0.0, 0.0, 100.0, 0.0);
     scrollView.showsHorizontalScrollIndicator = NO;
     scrollView.showsVerticalScrollIndicator = YES;
     scrollView.scrollsToTop = NO;
