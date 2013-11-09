@@ -211,7 +211,8 @@
     
    // [cell.storeAddress setFont:[UIFont fontWithName:@"Proxima Nova" size:16]];
     cell.venueTypeLabel.text = _storeElements.VenueType;
-    cell.storeDistance.text =[NSString stringWithFormat:@"%@ %@", _storeElements.Distance, @"miles"];
+    double milesDouble = [_storeElements.Distance doubleValue];
+    cell.storeDistance.text =[NSString stringWithFormat:@"%.1f %@", milesDouble, @"miles"];
     cell.closingTimeLabel.text=[NSString stringWithFormat:@"%@",_storeElements.ClosingTime];
     //[NSString stringWithFormat:@"%@ %@", [distanceArray objectAtIndex:indexPath.row], @"miles"];
     
