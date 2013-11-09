@@ -31,7 +31,7 @@
 @property (nonatomic, retain) IBOutlet UILabel *venueType;
 @property (nonatomic, retain) IBOutlet UILabel *distance;
 
-@property (nonatomic, retain) IBOutlet UILabel *address;
+@property (nonatomic, retain) IBOutlet UITextView *address;
 
 @property (nonatomic, retain) IBOutlet UILabel *city;
 

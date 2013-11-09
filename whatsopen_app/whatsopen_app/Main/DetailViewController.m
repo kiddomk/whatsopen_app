@@ -53,10 +53,18 @@ int secondsLeft;
     // [titleView setCenter:[self.navigationItem.titleView center]];
     [titleView addSubview: titleLabel];
     [self.navigationItem setTitleView:titleView];
+    
+    
 
     
     
 }
+
+-(void)viewDidAppear:(BOOL)animated{
+    scrollView.contentSize = CGSizeMake(320, 500 + notes.contentSize.height);
+}
+
+
 
 - (void)viewDidLoad
 {
@@ -127,12 +135,12 @@ int secondsLeft;
     //closingTime,timeLeft,,
     //,,,,,,,,;
     name.text=self.storeElements.Name;
-    address.text = self.storeElements.Address;
+    address.text = [NSString stringWithFormat:@"%@\n%@\n%@\n\n%@",self.storeElements.Address,self.storeElements.City,self.storeElements.PostCode,self.storeElements.Phone];
     venueType.text = self.storeElements.VenueType;
-    city.text = self.storeElements.City;
+    //city.text = self.storeElements.City;
     distance.text=[NSString stringWithFormat:@"%@ miles away",self.storeElements.Distance];
-    postCode.text = self.storeElements.PostCode;
-    telephone.text = self.storeElements.Phone;
+    //postCode.text = self.storeElements.PostCode;
+    //telephone.text = self.storeElements.Phone;
     
     venueType.text = self.storeElements.VenueType;
     closingTime.text=[NSString stringWithFormat:@"Open until %@",self.storeElements.ClosingTime];
@@ -141,13 +149,13 @@ int secondsLeft;
     NSURL *url = [NSURL URLWithString:self.storeElements.PictureUrl];
     imageView.imageURL=url;
     
-    //notes.text=self.storeElements.Notes;
+    notes.text=self.storeElements.Notes;
     
     CGRect frame = notes.frame;
     frame.size.height = notes.contentSize.height;
     notes.frame = frame;
     
-    //scrollView.contentSize = CGSizeMake(320, 480 + notes.contentSize.height);
+    
     //closingTime.text=self.storeElements.ClosingTime;
     
     
