@@ -205,7 +205,7 @@ int secondsLeft;
     
     annotationCoord.latitude = latitude;
     annotationCoord.longitude = longitude;
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(annotationCoord, 2*METERS_PER_MILE, 2*METERS_PER_MILE);
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(annotationCoord, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
     [self.mapView setRegion:[self.mapView regionThatFits:viewRegion] animated:YES];
 }
 
