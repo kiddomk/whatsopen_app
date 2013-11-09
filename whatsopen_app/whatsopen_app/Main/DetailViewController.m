@@ -55,13 +55,17 @@ int secondsLeft;
     [self.navigationItem setTitleView:titleView];
     
     
-
-    
-    
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    scrollView.contentSize = CGSizeMake(320, 520 + notes.contentSize.height);
+    if (IS_IPHONE_5) {
+         scrollView.contentSize = CGSizeMake(320, 520 + notes.contentSize.height);
+    }
+    else
+    {
+        scrollView.contentSize = CGSizeMake(320, 600 + notes.contentSize.height);
+    }
+   
 }
 
 
@@ -98,7 +102,6 @@ int secondsLeft;
     annotationCoord.latitude = latitude;
     annotationCoord.longitude = longitude;
     
-    //MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:annotationCoord addressDictionary:<#(NSDictionary *)#>];
     
     
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(annotationCoord, 5*METERS_PER_MILE, 5*METERS_PER_MILE);
@@ -132,8 +135,7 @@ int secondsLeft;
     scrollView.bounces = YES;
     scrollView.bouncesZoom = NO;
     
-    //closingTime,timeLeft,,
-    //,,,,,,,,;
+
     name.text=self.storeElements.Name;
     address.text = [NSString stringWithFormat:@"%@\n%@\n%@\n\n%@",self.storeElements.Address,self.storeElements.City,self.storeElements.PostCode,self.storeElements.Phone];
     venueType.text = self.storeElements.VenueType;
@@ -190,12 +192,6 @@ int secondsLeft;
     [self.navigationController popViewControllerAnimated:YES];
     [timer invalidate];
 }
-
-//-(void)scrollViewDidScroll:(UIScrollView *)aScrollView {
-//    
-//    float oldX = 0.0f;
-//    [aScrollView setContentOffset: CGPointMake(oldX, aScrollView.contentOffset.y)];
-//}
 
 
 - (void) mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {

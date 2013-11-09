@@ -683,7 +683,7 @@
 				ORGANIZATIONNAME = com.junseki;
 				TargetAttributes = {
 					E0CCB657172C048500835420 = {
-						DevelopmentTeam = DK34MVSU63;
+						DevelopmentTeam = HZX25XQUSZ;
 					};
 				};
 			};
@@ -937,7 +937,7 @@
 				INFOPLIST_FILE = "whatsopen_app/whatsopen_app-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "70E978B3-14A0-4D67-8132-A2D55FFBA080";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -952,7 +952,7 @@
 				INFOPLIST_FILE = "whatsopen_app/whatsopen_app-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "70E978B3-14A0-4D67-8132-A2D55FFBA080";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
