@@ -116,12 +116,12 @@
      
     refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Refreshing data..."];
    
-      //get new geo location
-     locationManager = [[CLLocationManager alloc] init];
-     latitude = locationManager.location.coordinate.latitude;
-     lontitude = locationManager.location.coordinate.longitude;
-     
-    self.storeData = [[StoreData alloc] initParserWithDelegate:self];
+//      //get new geo location
+//     locationManager = [[CLLocationManager alloc] init];
+//     latitude = locationManager.location.coordinate.latitude;
+//     lontitude = locationManager.location.coordinate.longitude;
+//     
+//    self.storeData = [[StoreData alloc] initParserWithDelegate:self];
 
      [self performSelector:@selector(updateTable) withObject:nil afterDelay:1.0];
 
@@ -157,9 +157,6 @@
     
     NSString *latlon=[NSString stringWithFormat:@"%f,%f",latitude,lontitude];
     
-    [self.storeData getParserRequest:latlon];
-    NSLog(@"location: %@",latlon);
-
     [self.storeData getParserRequest:latlon];
     [self.tableView reloadData];
     [self.refreshControl endRefreshing];
