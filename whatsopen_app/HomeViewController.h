@@ -11,7 +11,7 @@
 #import "StoreElements.h"
 #import <CoreLocation/CoreLocation.h>
 
-@interface HomeViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource> {
+@interface HomeViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource,StoreRequestDelegate,StoreRequestManagerDelegate> {
     
     
     StoreData *storeData;

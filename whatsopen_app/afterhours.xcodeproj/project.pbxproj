@@ -665,6 +665,11 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = com.junseki;
+				TargetAttributes = {
+					E0CCB657172C048500835420 = {
+						DevelopmentTeam = HZX25XQUSZ;
+					};
+				};
 			};
 			buildConfigurationList = E0CCB653172C048500835420 /* Build configuration list for PBXProject "afterhours" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -903,6 +908,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "whatsopen_app/whatsopen_app-Prefix.pch";
 				INFOPLIST_FILE = "whatsopen_app/whatsopen_app-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -916,6 +922,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "whatsopen_app/whatsopen_app-Prefix.pch";
 				INFOPLIST_FILE = "whatsopen_app/whatsopen_app-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;

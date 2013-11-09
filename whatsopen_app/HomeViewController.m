@@ -48,9 +48,8 @@
     
     [locationManager startUpdatingLocation];
     
-    StoreData *_parser = [[StoreData alloc] initParserWithDelegate:self];
-    self.storeData = _parser;
-    _parser=nil;
+
+    self.storeData = [[StoreData alloc] initParserWithDelegate:self];
 
     
     latitude = locationManager.location.coordinate.latitude;
