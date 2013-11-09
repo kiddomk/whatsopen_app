@@ -22,6 +22,8 @@
 
 @synthesize imageView,closingTime,timeLeft,name,venueType,distance,address,city,postCode,telephone,notes,ratingImageView,neighborhoods;
 
+int hours, minutes, seconds;
+int secondsLeft;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -39,6 +41,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //count down
+    secondsLeft = [storeElements.SecondsLeft intValue];
+    [self countdownTimer];
+     timeLeft.text = [self returnTime:[storeElements.SecondsLeft intValue]];
+    
     //change button
     UIImage *buttonImage = [UIImage imageNamed:@"arrow.png"];
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -108,8 +116,6 @@
     
     venueType.text = self.storeElements.VenueType;
     closingTime.text=[NSString stringWithFormat:@"Open until %@",self.storeElements.ClosingTime];
-
-    timeLeft.text=self.storeElements.TimeLeft;
     
     neighborhoods.text = self.storeElements.Neighborhoods;
     NSURL *url = [NSURL URLWithString:self.storeElements.PictureUrl];
@@ -123,7 +129,7 @@
     
     //scrollView.contentSize = CGSizeMake(320, 480 + notes.contentSize.height);
     //closingTime.text=self.storeElements.ClosingTime;
-    //timeLeft.text=self.storeElements.TimeLeft;
+    
     
     //rating
     UIImage *image;
@@ -154,6 +160,7 @@
 }
 - (void) back {
     [self.navigationController popViewControllerAnimated:YES];
+    [timer invalidate];
 }
 
 //-(void)scrollViewDidScroll:(UIScrollView *)aScrollView {
@@ -228,6 +235,33 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - count down
 
+- (void)updateCounter:(NSTimer *)theTimer {
+    if(secondsLeft > 0 ){
+        secondsLeft -- ;
+        timeLeft.text = [self returnTime:secondsLeft];
+       
+    }
+    else{
+        secondsLeft = [storeElements.SecondsLeft intValue];
+
+    }
+}
+
+-(void)countdownTimer{
+    
+    secondsLeft = hours = minutes = seconds = 0;
+   
+    timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(updateCounter:) userInfo:nil repeats:YES];
+
+}
+-(NSString *)returnTime:(int)inputSeconds{
+    
+    hours = inputSeconds / 3600;
+    minutes = (inputSeconds % 3600) / 60;
+    seconds = (inputSeconds %3600) % 60;
+    return [NSString stringWithFormat:@"%02d:%02d:%02d left", hours, minutes, seconds];
+}
 
 @end

@@ -80,5 +80,6 @@
 @property (nonatomic, retain) NSString *Neighborhoods;
 @property (nonatomic, retain) NSString *ClosingTime;
 @property (nonatomic, retain) NSString *TimeLeft;
+@property (nonatomic, retain) NSString *SecondsLeft;
 
 @end

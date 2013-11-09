@@ -10,7 +10,7 @@
 
 @implementation StoreElements
 
-@synthesize  ID, Name, Address, Address2, City, County, Country, PostCode, Phone, Latitude, Longitude, Distance, MondayOpenTime, MondayCloseTime, TuesdayOpenTime,  TuesdayCloseTime,  WednesdayOpenTime, WednesdayCloseTime, ThursdayOpenTime,  ThursdayCloseTime, FridayOpenTime, FridayCloseTime, SaturdayOpenTime, SaturdayCloseTime, SundayOpenTime, SundayCloseTime,ClosingTime,TimeLeft, Notes;
+@synthesize  ID, Name, Address, Address2, City, County, Country, PostCode, Phone, Latitude, Longitude, Distance, MondayOpenTime, MondayCloseTime, TuesdayOpenTime,  TuesdayCloseTime,  WednesdayOpenTime, WednesdayCloseTime, ThursdayOpenTime,  ThursdayCloseTime, FridayOpenTime, FridayCloseTime, SaturdayOpenTime, SaturdayCloseTime, SundayOpenTime, SundayCloseTime,ClosingTime,TimeLeft, Notes,SecondsLeft;
 
 @synthesize VenueType,VenueUrl,PictureUrl,Rating,Neighborhoods;
 

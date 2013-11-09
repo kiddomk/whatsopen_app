@@ -188,11 +188,12 @@
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="42 mins left" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="937">
-                            <rect key="frame" x="83" y="212" width="109" height="20"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="937">
+                            <rect key="frame" x="83" y="209" width="109" height="32"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="109" id="1120"/>
+                                <constraint firstAttribute="width" constant="109" id="lXG-oL-8pR"/>
+                                <constraint firstAttribute="height" constant="32" id="uSO-Fp-Chc"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
                             <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -219,7 +220,6 @@
                         <constraint firstItem="701" firstAttribute="centerX" secondItem="737" secondAttribute="centerX" id="813"/>
                         <constraint firstItem="349" firstAttribute="baseline" secondItem="701" secondAttribute="baseline" id="828"/>
                         <constraint firstItem="701" firstAttribute="top" secondItem="349" secondAttribute="top" id="830"/>
-                        <constraint firstItem="937" firstAttribute="leading" secondItem="794" secondAttribute="leading" id="943"/>
                         <constraint firstItem="349" firstAttribute="top" secondItem="6" secondAttribute="top" constant="145" id="1012"/>
                         <constraint firstItem="349" firstAttribute="centerY" secondItem="494" secondAttribute="centerY" id="1014"/>
                         <constraint firstAttribute="trailing" secondItem="7" secondAttribute="trailing" constant="20" symbolic="YES" id="1070"/>
@@ -248,9 +248,10 @@
                         <constraint firstItem="839" firstAttribute="leading" secondItem="349" secondAttribute="leading" id="1204"/>
                         <constraint firstItem="839" firstAttribute="leading" secondItem="604" secondAttribute="leading" id="1205"/>
                         <constraint firstItem="839" firstAttribute="top" secondItem="6" secondAttribute="top" constant="184" id="1207"/>
-                        <constraint firstItem="937" firstAttribute="top" secondItem="6" secondAttribute="top" constant="212" id="1208"/>
                         <constraint firstAttribute="bottom" secondItem="7" secondAttribute="bottom" constant="112" id="1210"/>
                         <constraint firstItem="662" firstAttribute="top" secondItem="6" secondAttribute="top" constant="436" id="1213"/>
+                        <constraint firstItem="937" firstAttribute="leading" secondItem="794" secondAttribute="leading" id="21c-Bp-8OT"/>
+                        <constraint firstItem="937" firstAttribute="top" secondItem="794" secondAttribute="bottom" constant="1" id="3kw-Eq-qkf"/>
                     </constraints>
                 </scrollView>
             </subviews>

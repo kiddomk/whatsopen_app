@@ -15,6 +15,9 @@
     MKMapView *mapView;
     IBOutlet UIScrollView *scrollView;
     CLLocationManager *locationManager;
+    //count down
+    NSTimer *timer;
+
 }
 @property (strong,nonatomic)IBOutlet UIImageView *imageView;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
@@ -44,6 +47,10 @@
 //PictureUrl: "http://s3-media4.ak.yelpcdn.com/bphoto/AfPu4cwEFr_5BU2OZjXaxg/l.jpg",
 //Rating: 4,
 //Neighborhoods: "Blackfriars",
+
+//count down
+-(void)updateCounter:(NSTimer *)theTimer;
+-(void)countdownTimer;
 
 - (IBAction)MapButton:(id)sender;
 @end
