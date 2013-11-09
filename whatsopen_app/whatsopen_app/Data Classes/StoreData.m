@@ -10,11 +10,11 @@
 #import "ApplicationConstants.h"
 #import <CoreLocation/CLAvailability.h>
 #import <CoreLocation/CLLocation.h>
-
-@interface StoreData()
-@property (nonatomic, retain) NSObject <StoreRequestDelegate> *delegate;
-
-@end
+//
+//@interface StoreData()
+//@property (nonatomic, retain) NSObject <StoreRequestDelegate> *delegate;
+//
+//@end
 
 @implementation StoreData
 @dynamic delegate;
@@ -27,10 +27,7 @@
 }
 
 - (void)didRetrieveData;{
-    //NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    
-    //if (requestType == GET_LOGIN_REQUEST){
-    //NSDictionary *results = [responseString JSONValue];
+
     NSError *jsonParsingError = nil;
     NSDictionary *publicTimeline = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonParsingError];
     [self parseRequest:publicTimeline];
@@ -103,5 +100,8 @@
     }
 }
 
+- (void)connection:(NSURLConnection *)aConnection didFailWithError:(NSError *)anError{
+    [self.delegate showConnectionError];
+}
 
 @end

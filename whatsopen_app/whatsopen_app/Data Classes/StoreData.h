@@ -16,6 +16,7 @@
 @optional
 
 - (void) didGetParsedInfo:(NSMutableArray *)inBody;
+-(void)showConnectionError;
 
 @end
 
@@ -23,7 +24,7 @@
     
 }
 
-//@property (nonatomic, retain) NSObject <StoreRequestDelegate> *delegate;
+@property (nonatomic, retain) NSObject <StoreRequestDelegate> *delegate;
 
 - (id)initParserWithDelegate:(NSObject<StoreRequestDelegate> *)aDelegate;
 - (void)didRetrieveData;

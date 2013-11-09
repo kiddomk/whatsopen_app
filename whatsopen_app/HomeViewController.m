@@ -54,8 +54,6 @@
     locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
     
     [locationManager startUpdatingLocation];
-    
-    
 
     self.storeData = [[StoreData alloc] initParserWithDelegate:self];
 
@@ -256,6 +254,13 @@
            detailViewController.storeElements = _storeElements;
     [self.navigationController pushViewController:detailViewController animated:YES];
 
+}
+
+#pragma mark - connection error
+-(void)showConnectionError{
+    
+    nomatchesView.hidden=NO;
+    
 }
 
 @end
