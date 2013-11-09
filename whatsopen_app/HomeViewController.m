@@ -203,6 +203,7 @@
     [self customRatingImageWithNumber:_storeElements.Rating onCell:cell];
     NSLog(@"picture Url: %@",_storeElements.PictureUrl);
     NSURL *url = [NSURL URLWithString:_storeElements.PictureUrl];
+    
     cell.mainImageView.imageURL=url;
     
     return cell;
