@@ -184,6 +184,7 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:nibTitle owner:self options:nil];
         cell = [nib objectAtIndex:0];
         cell.selectionStyle = UITableViewCellSelectionStyleGray;
+        
     } else {
         //cancel loading previous image for cell
         [[AsyncImageLoader sharedLoader] cancelLoadingImagesForTarget:cell.imageView];
