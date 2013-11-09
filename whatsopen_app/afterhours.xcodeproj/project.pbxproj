@@ -683,7 +683,7 @@
 				ORGANIZATIONNAME = com.junseki;
 				TargetAttributes = {
 					E0CCB657172C048500835420 = {
-						DevelopmentTeam = HZX25XQUSZ;
+						DevelopmentTeam = DK34MVSU63;
 					};
 				};
 			};
@@ -931,6 +931,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "whatsopen_app/whatsopen_app-Prefix.pch";
 				INFOPLIST_FILE = "whatsopen_app/whatsopen_app-Info.plist";
@@ -945,6 +946,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "whatsopen_app/whatsopen_app-Prefix.pch";
 				INFOPLIST_FILE = "whatsopen_app/whatsopen_app-Info.plist";

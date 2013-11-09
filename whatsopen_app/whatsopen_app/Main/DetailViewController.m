@@ -61,7 +61,7 @@ int secondsLeft;
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-    scrollView.contentSize = CGSizeMake(320, 500 + notes.contentSize.height);
+    scrollView.contentSize = CGSizeMake(320, 520 + notes.contentSize.height);
 }
 
 
