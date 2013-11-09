@@ -14,32 +14,26 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="249"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="32" customClass="AsyncImageView">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="32" customClass="AsyncImageView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="249"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B4V-1L-pTv">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B4V-1L-pTv">
                         <rect key="frame" x="0.0" y="-1" width="320" height="1"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="1" id="8rq-gN-WWn"/>
-                        </constraints>
                     </imageView>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3">
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3">
                         <rect key="frame" x="10" y="192" width="300" height="30"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="30" id="v8w-Nt-Mps"/>
-                        </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="32"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <size key="shadowOffset" width="0.0" height="1"/>
                     </label>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="venueType" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8">
-                        <rect key="frame" x="10" y="219" width="300" height="20"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="venueType" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8">
+                        <rect key="frame" x="11" y="219" width="300" height="20"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -47,24 +41,18 @@
                         <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <size key="shadowOffset" width="0.0" height="1"/>
                     </label>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="distance" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="17">
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="distance" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="17">
                         <rect key="frame" x="30" y="27" width="279" height="20"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="HN2-93-lgG"/>
-                        </constraints>
                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <size key="shadowOffset" width="0.0" height="1"/>
                     </label>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="2:30am" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="174">
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="2:30am" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="174">
                         <rect key="frame" x="26" y="10" width="283" height="20"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="jQw-Lj-44q"/>
-                        </constraints>
                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -72,27 +60,6 @@
                         <size key="shadowOffset" width="0.0" height="1"/>
                     </label>
                 </subviews>
-                <constraints>
-                    <constraint firstItem="17" firstAttribute="leading" secondItem="ToE-Zv-hF6" secondAttribute="leading" constant="30" id="17q-jd-CIf"/>
-                    <constraint firstItem="17" firstAttribute="top" secondItem="ToE-Zv-hF6" secondAttribute="top" constant="27" id="4mZ-eT-Kmi"/>
-                    <constraint firstItem="32" firstAttribute="top" secondItem="ToE-Zv-hF6" secondAttribute="top" id="7r8-3N-xuf"/>
-                    <constraint firstItem="32" firstAttribute="leading" secondItem="ToE-Zv-hF6" secondAttribute="leading" id="Csi-9w-Tls"/>
-                    <constraint firstItem="174" firstAttribute="trailing" secondItem="17" secondAttribute="trailing" id="DM1-hX-JmQ"/>
-                    <constraint firstItem="32" firstAttribute="leading" secondItem="B4V-1L-pTv" secondAttribute="leading" id="ICn-LN-P8L"/>
-                    <constraint firstAttribute="bottom" secondItem="B4V-1L-pTv" secondAttribute="bottom" constant="249" id="M6D-Dh-Ccd"/>
-                    <constraint firstItem="B4V-1L-pTv" firstAttribute="top" secondItem="8" secondAttribute="bottom" constant="-240" id="SiG-fh-s5a"/>
-                    <constraint firstItem="32" firstAttribute="trailing" secondItem="B4V-1L-pTv" secondAttribute="trailing" id="TSu-b8-R8t"/>
-                    <constraint firstItem="B4V-1L-pTv" firstAttribute="top" secondItem="3" secondAttribute="bottom" constant="-220" id="Vxc-ik-ePc"/>
-                    <constraint firstAttribute="trailing" secondItem="32" secondAttribute="trailing" id="YsK-DT-gjw"/>
-                    <constraint firstItem="174" firstAttribute="leading" secondItem="ToE-Zv-hF6" secondAttribute="leading" constant="26" id="fma-ss-ouF"/>
-                    <constraint firstItem="3" firstAttribute="trailing" secondItem="8" secondAttribute="trailing" id="p4l-Tb-vVd"/>
-                    <constraint firstItem="3" firstAttribute="trailing" secondItem="17" secondAttribute="trailing" constant="1" id="pvL-UH-2Ag"/>
-                    <constraint firstItem="3" firstAttribute="leading" secondItem="ToE-Zv-hF6" secondAttribute="leading" constant="10" id="rGW-eM-I2U"/>
-                    <constraint firstAttribute="bottom" secondItem="32" secondAttribute="bottom" id="sjW-ev-JQZ"/>
-                    <constraint firstItem="174" firstAttribute="top" secondItem="ToE-Zv-hF6" secondAttribute="top" constant="10" id="tAe-4b-3CP"/>
-                    <constraint firstItem="B4V-1L-pTv" firstAttribute="centerX" secondItem="8" secondAttribute="centerX" id="tKL-xb-jhy"/>
-                    <constraint firstItem="8" firstAttribute="leading" secondItem="3" secondAttribute="leading" id="yDh-Zt-0se"/>
-                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="closingTimeLabel" destination="174" id="244"/>

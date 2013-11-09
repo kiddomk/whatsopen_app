@@ -683,7 +683,7 @@
 				ORGANIZATIONNAME = com.junseki;
 				TargetAttributes = {
 					E0CCB657172C048500835420 = {
-						DevelopmentTeam = HZX25XQUSZ;
+						DevelopmentTeam = DK34MVSU63;
 					};
 				};
 			};
