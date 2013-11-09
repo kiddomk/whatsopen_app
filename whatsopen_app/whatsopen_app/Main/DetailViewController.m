@@ -33,22 +33,42 @@
     return self;
 }
 -(void)viewWillAppear:(BOOL)animated{
-           
+    
+    UIFont *titleFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:16];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,0,200,44)];
+    [titleLabel setBackgroundColor:[UIColor clearColor]];
+    [titleLabel setFont:titleFont];
+    titleLabel.textColor=[UIColor whiteColor];
+    titleLabel.textAlignment=NSTextAlignmentCenter;
+    
+    
+    
+    titleLabel.text=self.storeElements.Name;
+    [titleLabel setNumberOfLines:2];
+    
+    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0,0,200,44)];
+    [titleView setBackgroundColor:[UIColor clearColor]];
+    // [titleView setCenter:[self.navigationItem.titleView center]];
+    [titleView addSubview: titleLabel];
+    [self.navigationItem setTitleView:titleView];
+
+    
+    
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     //change button
-    UIImage *buttonImage = [UIImage imageNamed:@"arrow.png"];
+    UIImage *buttonImage = [UIImage imageNamed:@"arrow2.png"];
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button setImage:buttonImage forState:UIControlStateNormal];
-    button.frame = CGRectMake(0, 0, buttonImage.size.width, buttonImage.size.height);
+    button.frame = CGRectMake(0, 0, 14, 28);
     [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *customBarItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     self.navigationItem.leftBarButtonItem = customBarItem;
     
-    self.navigationItem.title = self.storeElements.Name;
+    
     
     mapView.delegate = self;
     mapView.showsUserLocation = YES;
@@ -115,7 +135,7 @@
     NSURL *url = [NSURL URLWithString:self.storeElements.PictureUrl];
     imageView.imageURL=url;
     
-    notes.text=self.storeElements.Notes;
+    //notes.text=self.storeElements.Notes;
     
     CGRect frame = notes.frame;
     frame.size.height = notes.contentSize.height;

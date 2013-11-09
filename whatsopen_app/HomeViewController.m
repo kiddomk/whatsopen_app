@@ -25,15 +25,31 @@
 
 - (void)viewWillAppear:(BOOL)animated {
 //    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbar.png"] forBarMetrics:UIBarMetricsDefault];
-    UIColor *tintColor = [UIColor colorWithRed:1 green:0 blue:0 alpha:1];
+    UIColor *tintColor = [UIColor colorWithRed:152/255.f green:36/255.f blue:25/255.f alpha:1];
     self.navigationController.navigationBar.barTintColor = tintColor;
+    
+    UIFont *titleFont = [UIFont fontWithName:@"HelveticaNeue-Bold" size:18];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,0,320,44)];
+    [titleLabel setBackgroundColor:[UIColor clearColor]];
+    [titleLabel setFont:titleFont];
+    titleLabel.textColor=[UIColor whiteColor];
+    titleLabel.textAlignment=NSTextAlignmentCenter;
+    titleLabel.text=@"AFTER HOURS";
+    [titleLabel setNumberOfLines:1];
+    
+    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0,0,320,44)];
+    [titleView setBackgroundColor:[UIColor clearColor]];
+    // [titleView setCenter:[self.navigationItem.titleView center]];
+    [titleView addSubview: titleLabel];
+    [self.navigationItem setTitleView:titleView];
+    
+    
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.title = @"After Hours";
     //starting loading
     [[AppDelegate sharedAppDelegate] showLoadingView];
    
@@ -73,7 +89,7 @@
     nomatchesView.backgroundColor = [UIColor clearColor];
     
     UILabel *matchesLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,80,320,320)];
-    matchesLabel.font = [UIFont fontWithName:@"Avenir" size:24];
+    matchesLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:24];
     matchesLabel.numberOfLines = 1;
     matchesLabel.lineBreakMode = NSLineBreakByWordWrapping;
     matchesLabel.shadowColor = [UIColor lightTextColor];
@@ -191,7 +207,7 @@
         [[AsyncImageLoader sharedLoader] cancelLoadingImagesForTarget:cell.imageView];
     }
     StoreElements *_storeElements = [self.storeArray objectAtIndex:indexPath.row];
-    [cell.storeName setFont:[UIFont fontWithName:@"Proxima Nova" size:26]];
+    [cell.storeName setFont:[UIFont fontWithName:@"HelveticaNeue-Light" size:26]];
     cell.storeName.text = _storeElements.Name;
     
    // [cell.storeAddress setFont:[UIFont fontWithName:@"Proxima Nova" size:16]];
