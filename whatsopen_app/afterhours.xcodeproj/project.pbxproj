@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8BE14CC6182E9429001E6972 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8BE14CC5182E9429001E6972 /* DetailViewController.xib */; };
+		8BE14CD0182EAD51001E6972 /* arrow2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BE14CC7182EAD51001E6972 /* arrow2.png */; };
+		8BE14CD1182EAD51001E6972 /* clock2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BE14CC8182EAD51001E6972 /* clock2.png */; };
+		8BE14CD2182EAD51001E6972 /* Default-568h@2x.psd in Resources */ = {isa = PBXBuildFile; fileRef = 8BE14CC9182EAD51001E6972 /* Default-568h@2x.psd */; };
+		8BE14CD3182EAD51001E6972 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BE14CCA182EAD51001E6972 /* Default-Portrait.png */; };
+		8BE14CD4182EAD51001E6972 /* Default-Portrait.psd in Resources */ = {isa = PBXBuildFile; fileRef = 8BE14CCB182EAD51001E6972 /* Default-Portrait.psd */; };
+		8BE14CD5182EAD51001E6972 /* Default@2x.psd in Resources */ = {isa = PBXBuildFile; fileRef = 8BE14CCC182EAD51001E6972 /* Default@2x.psd */; };
+		8BE14CD6182EAD51001E6972 /* pin2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BE14CCD182EAD51001E6972 /* pin2.png */; };
+		8BE14CD7182EAD51001E6972 /* stars.psd in Resources */ = {isa = PBXBuildFile; fileRef = 8BE14CCE182EAD51001E6972 /* stars.psd */; };
+		8BE14CD8182EAD51001E6972 /* timer.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BE14CCF182EAD51001E6972 /* timer.png */; };
+		8BE14CDF182EBB0C001E6972 /* 1star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BE14CD9182EBB0C001E6972 /* 1star@2x.png */; };
+		8BE14CE0182EBB0C001E6972 /* 2star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BE14CDA182EBB0C001E6972 /* 2star@2x.png */; };
+		8BE14CE1182EBB0C001E6972 /* 3star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BE14CDB182EBB0C001E6972 /* 3star@2x.png */; };
+		8BE14CE2182EBB0C001E6972 /* 4star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BE14CDC182EBB0C001E6972 /* 4star@2x.png */; };
+		8BE14CE3182EBB0C001E6972 /* 5star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BE14CDD182EBB0C001E6972 /* 5star@2x.png */; };
+		8BE14CE4182EBB0C001E6972 /* timer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8BE14CDE182EBB0C001E6972 /* timer@2x.png */; };
 		E01546A4172D251B00280CB6 /* Proxima Nova Black It.otf in Resources */ = {isa = PBXBuildFile; fileRef = E015467A172D251B00280CB6 /* Proxima Nova Black It.otf */; };
 		E01546A5172D251B00280CB6 /* Proxima Nova Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = E015467B172D251B00280CB6 /* Proxima Nova Black.otf */; };
 		E01546A6172D251B00280CB6 /* Proxima Nova Bold It.otf in Resources */ = {isa = PBXBuildFile; fileRef = E015467C172D251B00280CB6 /* Proxima Nova Bold It.otf */; };
@@ -112,7 +128,6 @@
 		E0CCB707172C410B00835420 /* RestaurantsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0CCB705172C410A00835420 /* RestaurantsViewController.xib */; };
 		E0CCB709172C471000835420 /* shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = E0CCB708172C470F00835420 /* shadow.png */; };
 		E0CCB70D172C4BC300835420 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCB70B172C4BC300835420 /* DetailViewController.m */; };
-		E0CCB70E172C4BC300835420 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0CCB70C172C4BC300835420 /* DetailViewController.xib */; };
 		E0CCB71E172C576100835420 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCB713172C576100835420 /* NSObject+SBJSON.m */; };
 		E0CCB71F172C576100835420 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCB715172C576100835420 /* NSString+SBJSON.m */; };
 		E0CCB720172C576100835420 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCB717172C576100835420 /* SBJSON.m */; };
@@ -133,6 +148,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8BE14CC5182E9429001E6972 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailViewController.xib; path = whatsopen_app/Main/DetailViewController.xib; sourceTree = "<group>"; };
+		8BE14CC7182EAD51001E6972 /* arrow2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow2.png; sourceTree = "<group>"; };
+		8BE14CC8182EAD51001E6972 /* clock2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock2.png; sourceTree = "<group>"; };
+		8BE14CC9182EAD51001E6972 /* Default-568h@2x.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Default-568h@2x.psd"; sourceTree = "<group>"; };
+		8BE14CCA182EAD51001E6972 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
+		8BE14CCB182EAD51001E6972 /* Default-Portrait.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Default-Portrait.psd"; sourceTree = "<group>"; };
+		8BE14CCC182EAD51001E6972 /* Default@2x.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Default@2x.psd"; sourceTree = "<group>"; };
+		8BE14CCD182EAD51001E6972 /* pin2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin2.png; sourceTree = "<group>"; };
+		8BE14CCE182EAD51001E6972 /* stars.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = stars.psd; sourceTree = "<group>"; };
+		8BE14CCF182EAD51001E6972 /* timer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = timer.png; sourceTree = "<group>"; };
+		8BE14CD9182EBB0C001E6972 /* 1star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1star@2x.png"; sourceTree = "<group>"; };
+		8BE14CDA182EBB0C001E6972 /* 2star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2star@2x.png"; sourceTree = "<group>"; };
+		8BE14CDB182EBB0C001E6972 /* 3star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "3star@2x.png"; sourceTree = "<group>"; };
+		8BE14CDC182EBB0C001E6972 /* 4star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "4star@2x.png"; sourceTree = "<group>"; };
+		8BE14CDD182EBB0C001E6972 /* 5star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5star@2x.png"; sourceTree = "<group>"; };
+		8BE14CDE182EBB0C001E6972 /* timer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timer@2x.png"; sourceTree = "<group>"; };
 		E015467A172D251B00280CB6 /* Proxima Nova Black It.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Black It.otf"; sourceTree = "<group>"; };
 		E015467B172D251B00280CB6 /* Proxima Nova Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Black.otf"; sourceTree = "<group>"; };
 		E015467C172D251B00280CB6 /* Proxima Nova Bold It.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Bold It.otf"; sourceTree = "<group>"; };
@@ -257,7 +288,6 @@
 		E0CCB708172C470F00835420 /* shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadow.png; sourceTree = "<group>"; };
 		E0CCB70A172C4BC200835420 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = whatsopen_app/Main/DetailViewController.h; sourceTree = "<group>"; };
 		E0CCB70B172C4BC300835420 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = whatsopen_app/Main/DetailViewController.m; sourceTree = "<group>"; };
-		E0CCB70C172C4BC300835420 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailViewController.xib; path = /Users/junseki/Documents/Projects/whatsopen_app/whatsopen_app/whatsopen_app/Main/DetailViewController.xib; sourceTree = "<absolute>"; };
 		E0CCB711172C576100835420 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
 		E0CCB712172C576100835420 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
 		E0CCB713172C576100835420 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
@@ -459,9 +489,9 @@
 				E0CCB6FE172C40D100835420 /* ClubsViewController.h */,
 				E0CCB6FF172C40D200835420 /* ClubsViewController.m */,
 				E0CCB700172C40D200835420 /* ClubsViewController.xib */,
+				8BE14CC5182E9429001E6972 /* DetailViewController.xib */,
 				E0CCB70A172C4BC200835420 /* DetailViewController.h */,
 				E0CCB70B172C4BC300835420 /* DetailViewController.m */,
-				E0CCB70C172C4BC300835420 /* DetailViewController.xib */,
 				E0CCB6EF172C228000835420 /* HomeViewController.h */,
 				E0CCB6F0172C228000835420 /* HomeViewController.m */,
 				E0CCB6F1172C228000835420 /* HomeViewController.xib */,
@@ -501,6 +531,21 @@
 		E0CCB6BD172C0DC500835420 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				8BE14CD9182EBB0C001E6972 /* 1star@2x.png */,
+				8BE14CDA182EBB0C001E6972 /* 2star@2x.png */,
+				8BE14CDB182EBB0C001E6972 /* 3star@2x.png */,
+				8BE14CDC182EBB0C001E6972 /* 4star@2x.png */,
+				8BE14CDD182EBB0C001E6972 /* 5star@2x.png */,
+				8BE14CDE182EBB0C001E6972 /* timer@2x.png */,
+				8BE14CC7182EAD51001E6972 /* arrow2.png */,
+				8BE14CC8182EAD51001E6972 /* clock2.png */,
+				8BE14CC9182EAD51001E6972 /* Default-568h@2x.psd */,
+				8BE14CCA182EAD51001E6972 /* Default-Portrait.png */,
+				8BE14CCB182EAD51001E6972 /* Default-Portrait.psd */,
+				8BE14CCC182EAD51001E6972 /* Default@2x.psd */,
+				8BE14CCD182EAD51001E6972 /* pin2.png */,
+				8BE14CCE182EAD51001E6972 /* stars.psd */,
+				8BE14CCF182EAD51001E6972 /* timer.png */,
 				E097D74D172D54DD00587EB4 /* clock.png */,
 				E097D74E172D54DD00587EB4 /* pin.png */,
 				E097D74B172D53BC00587EB4 /* Icon@2x.png */,
@@ -670,6 +715,7 @@
 				E0CCB672172C048500835420 /* Default-568h@2x.png in Resources */,
 				E0CCB6CD172C0DC500835420 /* Default-568h@2x.png in Resources */,
 				E0CCB6CE172C0DC500835420 /* Default.png in Resources */,
+				8BE14CDF182EBB0C001E6972 /* 1star@2x.png in Resources */,
 				E0CCB6CF172C0DC500835420 /* Default@2x.png in Resources */,
 				E0CCB6DA172C0DC500835420 /* MSBarButtonIconNavigationPane.png in Resources */,
 				E0CCB6DB172C0DC500835420 /* MSBarButtonIconNavigationPane@2x.png in Resources */,
@@ -677,7 +723,6 @@
 				E0CCB702172C40D200835420 /* ClubsViewController.xib in Resources */,
 				E0CCB707172C410B00835420 /* RestaurantsViewController.xib in Resources */,
 				E0CCB709172C471000835420 /* shadow.png in Resources */,
-				E0CCB70E172C4BC300835420 /* DetailViewController.xib in Resources */,
 				E031CE00172C8AFC00571228 /* StoreTableCell.xib in Resources */,
 				E031CE45172CA01000571228 /* Loading-screen.png in Resources */,
 				E031CE4B172CB2E300571228 /* 1star.png in Resources */,
@@ -686,15 +731,20 @@
 				E031CE4E172CB2E300571228 /* 4star.png in Resources */,
 				E031CE4F172CB2E300571228 /* 5star.png in Resources */,
 				E01546A4172D251B00280CB6 /* Proxima Nova Black It.otf in Resources */,
+				8BE14CE1182EBB0C001E6972 /* 3star@2x.png in Resources */,
+				8BE14CE0182EBB0C001E6972 /* 2star@2x.png in Resources */,
 				E01546A5172D251B00280CB6 /* Proxima Nova Black.otf in Resources */,
 				E01546A6172D251B00280CB6 /* Proxima Nova Bold It.otf in Resources */,
+				8BE14CD2182EAD51001E6972 /* Default-568h@2x.psd in Resources */,
 				E01546A7172D251B00280CB6 /* Proxima Nova Bold.otf in Resources */,
 				E01546A8172D251B00280CB6 /* Proxima Nova Cond Black It.otf in Resources */,
+				8BE14CD1182EAD51001E6972 /* clock2.png in Resources */,
 				E01546A9172D251B00280CB6 /* Proxima Nova Cond Black.otf in Resources */,
 				E01546AA172D251B00280CB6 /* Proxima Nova Cond Bold It.otf in Resources */,
 				E01546AB172D251B00280CB6 /* Proxima Nova Cond Bold.otf in Resources */,
 				E01546AC172D251B00280CB6 /* Proxima Nova Cond Light It.otf in Resources */,
 				E01546AD172D251B00280CB6 /* Proxima Nova Cond Light.otf in Resources */,
+				8BE14CD5182EAD51001E6972 /* Default@2x.psd in Resources */,
 				E01546AE172D251B00280CB6 /* Proxima Nova Cond Reg It.otf in Resources */,
 				E01546AF172D251B00280CB6 /* Proxima Nova Cond Reg.otf in Resources */,
 				E01546B0172D251B00280CB6 /* Proxima Nova Cond Sbold It.otf in Resources */,
@@ -705,6 +755,8 @@
 				E01546B5172D251B00280CB6 /* Proxima Nova Cond Xbold.otf in Resources */,
 				E01546B6172D251B00280CB6 /* Proxima Nova ExCn Black It.otf in Resources */,
 				E01546B7172D251B00280CB6 /* Proxima Nova ExCn Black.otf in Resources */,
+				8BE14CD7182EAD51001E6972 /* stars.psd in Resources */,
+				8BE14CD8182EAD51001E6972 /* timer.png in Resources */,
 				E01546B8172D251B00280CB6 /* Proxima Nova ExCn Bold It.otf in Resources */,
 				E01546B9172D251B00280CB6 /* Proxima Nova ExCn Bold.otf in Resources */,
 				E01546BA172D251B00280CB6 /* Proxima Nova ExCn Light It.otf in Resources */,
@@ -716,21 +768,26 @@
 				E01546C0172D251B00280CB6 /* Proxima Nova ExCn Thin It.otf in Resources */,
 				E01546C1172D251B00280CB6 /* Proxima Nova ExCn Thin.otf in Resources */,
 				E01546C2172D251B00280CB6 /* Proxima Nova ExCn Xbold It.otf in Resources */,
+				8BE14CD6182EAD51001E6972 /* pin2.png in Resources */,
 				E01546C3172D251B00280CB6 /* Proxima Nova ExCn Xbold.otf in Resources */,
+				8BE14CD4182EAD51001E6972 /* Default-Portrait.psd in Resources */,
 				E01546C4172D251B00280CB6 /* Proxima Nova Light It.otf in Resources */,
 				E01546C5172D251B00280CB6 /* Proxima Nova Light.otf in Resources */,
 				E01546C6172D251B00280CB6 /* Proxima Nova Reg It.otf in Resources */,
 				E01546C7172D251B00280CB6 /* Proxima Nova Reg.otf in Resources */,
 				E01546C8172D251B00280CB6 /* Proxima Nova Sbold It.otf in Resources */,
 				E01546C9172D251B00280CB6 /* Proxima Nova Sbold.otf in Resources */,
+				8BE14CE2182EBB0C001E6972 /* 4star@2x.png in Resources */,
 				E01546CA172D251B00280CB6 /* Proxima Nova Thin It.otf in Resources */,
 				E01546CB172D251B00280CB6 /* Proxima Nova Thin.otf in Resources */,
 				E05BC000182E79C4007CCC90 /* LoadingVC.xib in Resources */,
 				E01546CC172D251B00280CB6 /* Proxima Nova Xbold It.otf in Resources */,
 				E01546CD172D251B00280CB6 /* Proxima Nova Xbold.otf in Resources */,
 				E01546D1172D457E00280CB6 /* alert.png in Resources */,
+				8BE14CE4182EBB0C001E6972 /* timer@2x.png in Resources */,
 				E01546D3172D4C8100280CB6 /* navbar@2X.png in Resources */,
 				E01546D5172D4DB700280CB6 /* navbar.png in Resources */,
+				8BE14CD0182EAD51001E6972 /* arrow2.png in Resources */,
 				E01546D9172D517F00280CB6 /* directionButton.png in Resources */,
 				E097D734172D52F300587EB4 /* arrow.png in Resources */,
 				E097D73F172D532E00587EB4 /* Icon-72.png in Resources */,
@@ -741,12 +798,15 @@
 				E097D744172D532E00587EB4 /* Icon-Small@2x.png in Resources */,
 				E097D745172D532E00587EB4 /* Icon.png in Resources */,
 				E097D746172D532E00587EB4 /* Icon@2x.png in Resources */,
+				8BE14CE3182EBB0C001E6972 /* 5star@2x.png in Resources */,
 				E097D747172D532E00587EB4 /* iTunesArtwork.png in Resources */,
 				E097D748172D532E00587EB4 /* iTunesArtwork@2x.png in Resources */,
 				E097D74A172D53B400587EB4 /* Icon.png in Resources */,
+				8BE14CC6182E9429001E6972 /* DetailViewController.xib in Resources */,
 				E097D74C172D53BC00587EB4 /* Icon@2x.png in Resources */,
 				E097D74F172D54DD00587EB4 /* clock.png in Resources */,
 				E097D750172D54DD00587EB4 /* pin.png in Resources */,
+				8BE14CD3182EAD51001E6972 /* Default-Portrait.png in Resources */,
 				E0E82321177644B9003B5F76 /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
