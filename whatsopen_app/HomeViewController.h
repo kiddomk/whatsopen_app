@@ -24,6 +24,7 @@
 @property (nonatomic, retain) NSMutableArray *storeArray;
 
 @property (nonatomic, retain) NSMutableArray *distanceArray;
+@property (nonatomic,retain) UIView *nomatchesView;
 
 
 @end

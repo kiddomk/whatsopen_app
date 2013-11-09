@@ -73,6 +73,10 @@
 		E031CE4D172CB2E300571228 /* 2star.png in Resources */ = {isa = PBXBuildFile; fileRef = E031CE48172CB2E300571228 /* 2star.png */; };
 		E031CE4E172CB2E300571228 /* 4star.png in Resources */ = {isa = PBXBuildFile; fileRef = E031CE49172CB2E300571228 /* 4star.png */; };
 		E031CE4F172CB2E300571228 /* 5star.png in Resources */ = {isa = PBXBuildFile; fileRef = E031CE4A172CB2E300571228 /* 5star.png */; };
+		E05BBFFF182E79C4007CCC90 /* LoadingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E05BBFFD182E79C4007CCC90 /* LoadingVC.m */; };
+		E05BC000182E79C4007CCC90 /* LoadingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E05BBFFE182E79C4007CCC90 /* LoadingVC.xib */; };
+		E05BC006182E80F7007CCC90 /* CRNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E05BC003182E80F7007CCC90 /* CRNavigationBar.m */; };
+		E05BC007182E80F7007CCC90 /* CRNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E05BC005182E80F7007CCC90 /* CRNavigationController.m */; };
 		E097D734172D52F300587EB4 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = E097D733172D52F300587EB4 /* arrow.png */; };
 		E097D73F172D532E00587EB4 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = E097D735172D532E00587EB4 /* Icon-72.png */; };
 		E097D740172D532E00587EB4 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E097D736172D532E00587EB4 /* Icon-72@2x.png */; };
@@ -216,6 +220,13 @@
 		E031CE48172CB2E300571228 /* 2star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2star.png; sourceTree = "<group>"; };
 		E031CE49172CB2E300571228 /* 4star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4star.png; sourceTree = "<group>"; };
 		E031CE4A172CB2E300571228 /* 5star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5star.png; sourceTree = "<group>"; };
+		E05BBFFC182E79C4007CCC90 /* LoadingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingVC.h; sourceTree = "<group>"; };
+		E05BBFFD182E79C4007CCC90 /* LoadingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingVC.m; sourceTree = "<group>"; };
+		E05BBFFE182E79C4007CCC90 /* LoadingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingVC.xib; sourceTree = "<group>"; };
+		E05BC002182E80F7007CCC90 /* CRNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRNavigationBar.h; sourceTree = "<group>"; };
+		E05BC003182E80F7007CCC90 /* CRNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRNavigationBar.m; sourceTree = "<group>"; };
+		E05BC004182E80F7007CCC90 /* CRNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRNavigationController.h; sourceTree = "<group>"; };
+		E05BC005182E80F7007CCC90 /* CRNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRNavigationController.m; sourceTree = "<group>"; };
 		E097D733172D52F300587EB4 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		E097D735172D532E00587EB4 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		E097D736172D532E00587EB4 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
@@ -404,6 +415,18 @@
 			);
 			name = AFNetworking;
 			path = ../../../../../Downloads/AFNetworking;
+			sourceTree = "<group>";
+		};
+		E05BC001182E80F7007CCC90 /* CRNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				E05BC002182E80F7007CCC90 /* CRNavigationBar.h */,
+				E05BC003182E80F7007CCC90 /* CRNavigationBar.m */,
+				E05BC004182E80F7007CCC90 /* CRNavigationController.h */,
+				E05BC005182E80F7007CCC90 /* CRNavigationController.m */,
+			);
+			name = CRNavigationController;
+			path = Library/CRNavigationController;
 			sourceTree = "<group>";
 		};
 		E0CCB64F172C048400835420 = {
@@ -604,6 +627,9 @@
 		E0CCB751172C6B0A00835420 /* App Constants */ = {
 			isa = PBXGroup;
 			children = (
+				E05BBFFC182E79C4007CCC90 /* LoadingVC.h */,
+				E05BBFFD182E79C4007CCC90 /* LoadingVC.m */,
+				E05BBFFE182E79C4007CCC90 /* LoadingVC.xib */,
 				E0CCB764172C7D8200835420 /* CacheManager.h */,
 				E0CCB765172C7D8300835420 /* CacheManager.m */,
 				E0CCB755172C6F8000835420 /* GlobalSettings.h */,
@@ -620,6 +646,7 @@
 		E0CCB75C172C77E500835420 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				E05BC001182E80F7007CCC90 /* CRNavigationController */,
 				E031CE1F172C921400571228 /* AFNetworking */,
 				E0CCB75D172C77F900835420 /* Async Images */,
 				E0CCB710172C576100835420 /* JSON */,
@@ -754,6 +781,7 @@
 				E01546C9172D251B00280CB6 /* Proxima Nova Sbold.otf in Resources */,
 				E01546CA172D251B00280CB6 /* Proxima Nova Thin It.otf in Resources */,
 				E01546CB172D251B00280CB6 /* Proxima Nova Thin.otf in Resources */,
+				E05BC000182E79C4007CCC90 /* LoadingVC.xib in Resources */,
 				E01546CC172D251B00280CB6 /* Proxima Nova Xbold It.otf in Resources */,
 				E01546CD172D251B00280CB6 /* Proxima Nova Xbold.otf in Resources */,
 				E01546D1172D457E00280CB6 /* alert.png in Resources */,
@@ -796,6 +824,8 @@
 				E0CCB6ED172C153900835420 /* PRTween.m in Sources */,
 				E0CCB6F2172C228000835420 /* HomeViewController.m in Sources */,
 				E0CCB701172C40D200835420 /* ClubsViewController.m in Sources */,
+				E05BBFFF182E79C4007CCC90 /* LoadingVC.m in Sources */,
+				E05BC007182E80F7007CCC90 /* CRNavigationController.m in Sources */,
 				E0CCB706172C410B00835420 /* RestaurantsViewController.m in Sources */,
 				E0CCB70D172C4BC300835420 /* DetailViewController.m in Sources */,
 				E0CCB71E172C576100835420 /* NSObject+SBJSON.m in Sources */,
@@ -811,6 +841,7 @@
 				E0CCB75A172C6F8100835420 /* GlobalSettings.m in Sources */,
 				E0CCB75B172C6F8100835420 /* DownloadLightWeight.m in Sources */,
 				E0CCB760172C77F900835420 /* AsyncImageView.m in Sources */,
+				E05BC006182E80F7007CCC90 /* CRNavigationBar.m in Sources */,
 				E0CCB766172C7D8300835420 /* CacheManager.m in Sources */,
 				E031CE01172C8AFC00571228 /* StoreTableCell.m in Sources */,
 				E031CE33172C921400571228 /* AFHTTPClient.m in Sources */,

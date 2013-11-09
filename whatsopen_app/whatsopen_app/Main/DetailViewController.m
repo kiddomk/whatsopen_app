@@ -33,7 +33,7 @@
     return self;
 }
 -(void)viewWillAppear:(BOOL)animated{
-           [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbar.png"] forBarMetrics:UIBarMetricsDefault];
+           
 }
 
 - (void)viewDidLoad
@@ -102,10 +102,10 @@
     address.text = self.storeElements.Address;
     venueType.text = self.storeElements.VenueType;
     city.text = self.storeElements.City;
-    distance.text=[NSString stringWithFormat:@"%@",self.storeElements.Distance];
+    distance.text=[NSString stringWithFormat:@"%@ miles away",self.storeElements.Distance];
     postCode.text = self.storeElements.PostCode;
     telephone.text = self.storeElements.Phone;
-    notes.text=self.storeElements.Notes;
+    
     venueType.text = self.storeElements.VenueType;
     closingTime.text=[NSString stringWithFormat:@"Open until %@",self.storeElements.ClosingTime];
 
@@ -115,6 +115,13 @@
     NSURL *url = [NSURL URLWithString:self.storeElements.PictureUrl];
     imageView.imageURL=url;
     
+    notes.text=self.storeElements.Notes;
+    
+    CGRect frame = notes.frame;
+    frame.size.height = notes.contentSize.height;
+    notes.frame = frame;
+    
+    //scrollView.contentSize = CGSizeMake(320, 480 + notes.contentSize.height);
     //closingTime.text=self.storeElements.ClosingTime;
     //timeLeft.text=self.storeElements.TimeLeft;
     
@@ -149,11 +156,11 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
--(void)scrollViewDidScroll:(UIScrollView *)aScrollView {
-    
-    float oldX = 0.0f;
-    [aScrollView setContentOffset: CGPointMake(oldX, aScrollView.contentOffset.y)];
-}
+//-(void)scrollViewDidScroll:(UIScrollView *)aScrollView {
+//    
+//    float oldX = 0.0f;
+//    [aScrollView setContentOffset: CGPointMake(oldX, aScrollView.contentOffset.y)];
+//}
 
 
 - (void) mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {

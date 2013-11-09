@@ -30,24 +30,66 @@
 #import "MSNavigationPaneViewController.h"
 #import "MasterViewController.h"
 #import "CacheManager.h"
+#import "LoadingVC.h"
+#import "HomeViewController.h"
+#import "CRNavigationController.h"
 
 @implementation AppDelegate
+@synthesize loadingVC;
+
++ (AppDelegate *)sharedAppDelegate {
+    
+    return (AppDelegate *)[UIApplication sharedApplication].delegate;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
 
-    self.navigationPaneViewController = [[MSNavigationPaneViewController alloc] init];
-
-    MasterViewController *masterViewController = [[MasterViewController alloc] init];
-    masterViewController.navigationPaneViewController = self.navigationPaneViewController;
-    self.navigationPaneViewController.masterViewController = masterViewController;
+//    self.navigationPaneViewController = [[MSNavigationPaneViewController alloc] init];
+//
+//    MasterViewController *masterViewController = [[MasterViewController alloc] init];
+//    masterViewController.navigationPaneViewController = self.navigationPaneViewController;
+//    self.navigationPaneViewController.masterViewController = masterViewController;
+    
+    HomeViewController *homeViewController =[[HomeViewController alloc]init];
+    
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    self.window.rootViewController = self.navigationPaneViewController;//homeViewController;//
+//    [self.window makeKeyAndVisible];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = self.navigationPaneViewController;
+    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
 
+    CRNavigationController *nvc = [[CRNavigationController alloc] initWithRootViewController:homeViewController];
+    self.window.rootViewController = nvc;
+    
+    UIColor *navigationTextColor = [UIColor whiteColor];
+    
+    self.window.tintColor = navigationTextColor;
+    
+    [[UINavigationBar appearance] setTitleTextAttributes:@{
+                                                           NSForegroundColorAttributeName : navigationTextColor
+                                                           }];
     
     return YES;
+}
+
+- (void) showLoadingView {
+    if (loadingVC==nil) {
+        loadingVC = [[LoadingVC alloc] init];
+        loadingVC.view.center = self.window.center;
+        [self.window addSubview:loadingVC.view];
+        [loadingVC activityIndicatorStart];
+
+    }
+   }
+
+- (void) hideLoadingView {
+    
+    [loadingVC activityIndicatorStop];
+    [loadingVC.view removeFromSuperview];
 }
 
 @end

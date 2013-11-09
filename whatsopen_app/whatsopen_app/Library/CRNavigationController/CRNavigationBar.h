@@ -1,11 +1,9 @@
 //
-//  MSAppDelegate.h
-//  MSNavigationPaneViewController
+//  CRNavigationBar.h
+//  CRNavigationControllerExample
 //
-//  Created by Eric Horacek on 11/20/12.
-//  Copyright (c) 2012-2013 Monospace Ltd. All rights reserved.
-//
-//  This code is distributed under the terms and conditions of the MIT license.
+//  Created by Corey Roberts on 9/24/13.
+//  Copyright (c) 2013 SpacePyro Inc. All rights reserved.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -24,21 +22,9 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
-//
 
 #import <UIKit/UIKit.h>
-#import "LoadingVC.h"
 
-@class MSNavigationPaneViewController;
-
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) MSNavigationPaneViewController *navigationPaneViewController;
-@property (nonatomic, retain) LoadingVC *loadingVC;
-
-+ (AppDelegate *)sharedAppDelegate;
-- (void) showLoadingView;
-- (void) hideLoadingView;
+@interface CRNavigationBar : UINavigationBar
 
 @end

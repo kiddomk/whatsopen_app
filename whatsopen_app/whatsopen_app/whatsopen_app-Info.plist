@@ -41,14 +41,12 @@
 	<array>
 		<string>Proxima Nova Bold.otf</string>
 	</array>
-	<key>UIPrerenderedIcon</key>
-	<true/>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
 	</array>
-	<key>UIStatusBarHidden</key>
-	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

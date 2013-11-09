@@ -10,6 +10,7 @@
 #import "StoreTableCell.h"
 #import "DetailViewController.h"
 #import "AsyncImageView.h"
+#import "AppDelegate.h"
 
 @interface HomeViewController ()
 
@@ -18,18 +19,24 @@
 @implementation HomeViewController
 
 @synthesize storeArray, storeData, distanceArray;
+@synthesize nomatchesView;
+
 
 
 - (void)viewWillAppear:(BOOL)animated {
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbar.png"] forBarMetrics:UIBarMetricsDefault];
+//    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbar.png"] forBarMetrics:UIBarMetricsDefault];
+    UIColor *tintColor = [UIColor colorWithRed:1 green:0 blue:0 alpha:1];
+    self.navigationController.navigationBar.barTintColor = tintColor;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    self.title = @"After Hours";
+    //starting loading
+    [[AppDelegate sharedAppDelegate] showLoadingView];
    
-    
     UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
     
     [refresh addTarget:self
@@ -48,6 +55,7 @@
     
     [locationManager startUpdatingLocation];
     
+    
 
     self.storeData = [[StoreData alloc] initParserWithDelegate:self];
 
@@ -60,6 +68,28 @@
     [self.storeData getParserRequest:latlon];
     NSLog(@"location: %@",latlon);
     
+    //no results label
+    nomatchesView = [[UIView alloc] initWithFrame:self.view.frame];
+    nomatchesView.backgroundColor = [UIColor clearColor];
+    
+    UILabel *matchesLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,80,320,320)];
+    matchesLabel.font = [UIFont fontWithName:@"Avenir" size:24];
+    matchesLabel.numberOfLines = 1;
+    matchesLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    matchesLabel.shadowColor = [UIColor lightTextColor];
+    matchesLabel.textColor = [UIColor darkGrayColor];
+    matchesLabel.shadowOffset = CGSizeMake(0, 1);
+    matchesLabel.backgroundColor = [UIColor clearColor];
+    matchesLabel.textAlignment =  NSTextAlignmentCenter;
+    
+    //Here is the text for when there are no results
+    matchesLabel.text = @"Time to go home :-(";
+    
+    
+    nomatchesView.hidden = YES;
+    [nomatchesView addSubview:matchesLabel];
+    [self.tableView insertSubview:nomatchesView belowSubview:self.tableView];
+    
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 
 }
@@ -69,38 +99,26 @@
     
     self.storeArray = inBody;
     
-//    locationManager = [[CLLocationManager alloc] init];
-//    distanceArray = [[NSMutableArray alloc] init];
-//    
-//    for(StoreElements *storeElements in inBody) {
-//        
-//        double lat = locationManager.location.coordinate.latitude;
-//        double lon = locationManager.location.coordinate.longitude;
-//        
-//        
-//        NSString *lat1 = storeElements.Latitude;
-//        NSString *lon1 = storeElements.Longitude;
-//        double lat2 = [lat1 doubleValue];
-//        double lon2 = [lon1 doubleValue];
-//        
-//        CLLocation *locA = [[CLLocation alloc] initWithLatitude:lat longitude:lon];
-//        CLLocation *locB = [[CLLocation alloc] initWithLatitude:lat2 longitude:lon2];
-//        CLLocationDistance distance = [locA distanceFromLocation:locB];
-//        
-//        NSLog(@"distance is :%f", distance);
-//        NSLog(@"miles :%f", (distance/1000));
-//        
-//        NSString *dString = [NSString stringWithFormat:@"%.2f", (distance/1000)];
-//        [distanceArray addObject:dString];
-//        
-//    }
+    //If there is no table data, unhide the "No matches" view
+    if([storeArray count] == 0 ){
+        nomatchesView.hidden = NO;
+    } else {
+        nomatchesView.hidden = YES;
+    }
     
     [self.tableView reloadData];
+    
+    //stop loading
+    [[AppDelegate sharedAppDelegate] hideLoadingView];
 }
 
 
 
  -(void)refreshView:(UIRefreshControl *)refresh {
+     
+     //starting loading
+     [[AppDelegate sharedAppDelegate] showLoadingView];
+     
     refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Refreshing data..."];
    
       //get new geo location
@@ -108,9 +126,8 @@
      latitude = locationManager.location.coordinate.latitude;
      lontitude = locationManager.location.coordinate.longitude;
      
-     StoreData *_parser = [[StoreData alloc] initParserWithDelegate:self];
-     self.storeData = _parser;
-     _parser=nil;
+    self.storeData = [[StoreData alloc] initParserWithDelegate:self];
+
      [self performSelector:@selector(updateTable) withObject:nil afterDelay:2.0];
 
     
@@ -120,6 +137,8 @@
         refresh.attributedTitle = [[NSAttributedString alloc] initWithString:lastUpdated];
          [refresh endRefreshing];
      
+     //stop loading
+     [[AppDelegate sharedAppDelegate] hideLoadingView];
 }
 
 
@@ -145,6 +164,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+
+    
     return [storeArray count];
 
 }
