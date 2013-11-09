@@ -104,7 +104,7 @@
     [nomatchesView addSubview:matchesLabel];
     [self.tableView insertSubview:nomatchesView belowSubview:self.tableView];
     
-    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    //[self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 
 }
 
