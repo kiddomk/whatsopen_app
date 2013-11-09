@@ -33,7 +33,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="836"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="142">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="142" customClass="AsyncImageView">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="145"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <constraints>
@@ -197,22 +197,22 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Open until 11:00 PM" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="794">
-                            <rect key="frame" x="58" y="189" width="241" height="29"/>
+                            <rect key="frame" x="58" y="214" width="241" height="20"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="241" id="1121"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="22"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="4 hours 0 minutes left" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="937">
-                            <rect key="frame" x="83" y="214" width="216" height="20"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="01:00:00 left" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="937">
+                            <rect key="frame" x="83" y="189" width="216" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="216" id="1120"/>
-                                <constraint firstAttribute="height" constant="20" id="kHR-Ax-311"/>
+                                <constraint firstAttribute="height" constant="29" id="kHR-Ax-311"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
                             <color key="textColor" red="0.59607845544815063" green="0.14117647707462311" blue="0.098039224743843079" alpha="1" colorSpace="deviceRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -240,15 +240,15 @@
                         <constraint firstItem="349" firstAttribute="top" secondItem="6" secondAttribute="top" constant="147" id="1012"/>
                         <constraint firstItem="349" firstAttribute="centerY" secondItem="494" secondAttribute="centerY" id="1014"/>
                         <constraint firstItem="794" firstAttribute="trailing" secondItem="494" secondAttribute="trailing" constant="-2" id="1123"/>
-                        <constraint firstItem="794" firstAttribute="top" secondItem="6" secondAttribute="top" constant="189" id="1197"/>
+                        <constraint firstItem="794" firstAttribute="top" secondItem="6" secondAttribute="top" constant="214" id="1197"/>
                         <constraint firstItem="349" firstAttribute="leading" secondItem="6" secondAttribute="leading" constant="20" id="1201"/>
-                        <constraint firstItem="937" firstAttribute="top" secondItem="6" secondAttribute="top" constant="214" id="1208"/>
+                        <constraint firstItem="937" firstAttribute="top" secondItem="6" secondAttribute="top" constant="189" id="1208"/>
                         <constraint firstItem="701" firstAttribute="centerX" secondItem="737" secondAttribute="centerX" constant="-3" id="9H2-Ez-pNx"/>
                         <constraint firstItem="494" firstAttribute="leading" secondItem="349" secondAttribute="trailing" id="Dey-5Z-Efu"/>
                         <constraint firstAttribute="bottom" secondItem="737" secondAttribute="bottom" constant="222" id="VXa-T6-PaK"/>
                         <constraint firstItem="AgU-ed-2Kc" firstAttribute="top" secondItem="701" secondAttribute="bottom" id="XEA-sV-F2z"/>
                         <constraint firstItem="AgU-ed-2Kc" firstAttribute="leading" secondItem="701" secondAttribute="leading" id="XfH-xU-R0D"/>
-                        <constraint firstItem="937" firstAttribute="top" secondItem="794" secondAttribute="bottom" constant="-4" id="Xsm-jT-2s6"/>
+                        <constraint firstItem="937" firstAttribute="top" secondItem="794" secondAttribute="bottom" constant="-45" id="Xsm-jT-2s6"/>
                         <constraint firstItem="701" firstAttribute="centerX" secondItem="6" secondAttribute="centerX" id="q8N-Bj-Hxk"/>
                         <constraint firstItem="737" firstAttribute="leading" secondItem="6" secondAttribute="leading" constant="15" id="shC-C8-ocU"/>
                         <constraint firstItem="737" firstAttribute="top" secondItem="6" secondAttribute="top" constant="464" id="siP-ne-yOq"/>
