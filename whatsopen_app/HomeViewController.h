@@ -11,7 +11,7 @@
 #import "StoreElements.h"
 #import <CoreLocation/CoreLocation.h>
 
-@interface HomeViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource,StoreRequestDelegate,StoreRequestManagerDelegate> {
+@interface HomeViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource,StoreRequestDelegate,StoreRequestManagerDelegate, CLLocationManagerDelegate> {
     
     
     StoreData *storeData;
@@ -25,6 +25,7 @@
 
 @property (nonatomic, retain) NSMutableArray *distanceArray;
 @property (nonatomic,retain) UIView *nomatchesView;
+@property (nonatomic,retain) UILabel *matchesLabel;
 
 
 @end

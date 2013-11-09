@@ -19,7 +19,7 @@
 @implementation HomeViewController
 
 @synthesize storeArray, storeData, distanceArray;
-@synthesize nomatchesView;
+@synthesize nomatchesView,matchesLabel;
 
 
 
@@ -60,35 +60,16 @@
                  forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refresh;
     
-    /**initialize location manager**/
-    if (nil == locationManager)
-        locationManager = [[CLLocationManager alloc] init];
-    
-    //set the delegate for the location manager
-    //locationManager.delegate = self;
-    // set your desired accuracy
-    locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
-    
-    [locationManager startUpdatingLocation];
-
-    self.storeData = [[StoreData alloc] initParserWithDelegate:self];
-
-    
-    latitude = locationManager.location.coordinate.latitude;
-    lontitude = locationManager.location.coordinate.longitude;
-    
-    NSString *latlon=[NSString stringWithFormat:@"%f,%f",latitude,lontitude];
-    
-    [self.storeData getParserRequest:latlon];
-    NSLog(@"location: %@",latlon);
+    //get location
+    [self updateTable];
     
     //no results label
     nomatchesView = [[UIView alloc] initWithFrame:self.view.frame];
     nomatchesView.backgroundColor = [UIColor clearColor];
     
-    UILabel *matchesLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,80,320,320)];
-    matchesLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:24];
-    matchesLabel.numberOfLines = 1;
+    matchesLabel = [[UILabel alloc] initWithFrame:CGRectMake(10,80,300,320)];
+    matchesLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:16];
+    matchesLabel.numberOfLines = 2;
     matchesLabel.lineBreakMode = NSLineBreakByWordWrapping;
     matchesLabel.shadowColor = [UIColor lightTextColor];
     matchesLabel.textColor = [UIColor darkGrayColor];
@@ -142,7 +123,7 @@
      
     self.storeData = [[StoreData alloc] initParserWithDelegate:self];
 
-     [self performSelector:@selector(updateTable) withObject:nil afterDelay:2.0];
+     [self performSelector:@selector(updateTable) withObject:nil afterDelay:1.0];
 
     
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -157,8 +138,30 @@
 
 
 - (void) updateTable {
+    /**initialize location manager**/
+    if (nil == locationManager)
+        locationManager = [[CLLocationManager alloc] init];
+    
+    //set the delegate for the location manager
+    //locationManager.delegate = self;
+    // set your desired accuracy
+    locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+    [locationManager setDelegate:self];
+    [locationManager startUpdatingLocation];
+    
+    self.storeData = [[StoreData alloc] initParserWithDelegate:self];
+    
+    
+    latitude = locationManager.location.coordinate.latitude;
+    lontitude = locationManager.location.coordinate.longitude;
+    
     NSString *latlon=[NSString stringWithFormat:@"%f,%f",latitude,lontitude];
+    
     [self.storeData getParserRequest:latlon];
+    NSLog(@"location: %@",latlon);
+
+    [self.storeData getParserRequest:latlon];
+    [self.tableView reloadData];
     [self.refreshControl endRefreshing];
 }
 
@@ -279,6 +282,26 @@
     
     nomatchesView.hidden=NO;
     
+}
+
+-(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+    
+    if (status == kCLAuthorizationStatusNotDetermined) {
+        
+        
+    }else if (status == kCLAuthorizationStatusDenied) {
+        
+         matchesLabel.text = @"Please enable location services :-p";
+        nomatchesView.hidden=NO;
+        self.storeData =nil;
+        [self.tableView reloadData];
+    }
+    else if (status == kCLAuthorizationStatusAuthorized) {
+        nomatchesView.hidden=YES;
+        [self updateTable];
+    } else {
+        
+    }
 }
 
 @end
