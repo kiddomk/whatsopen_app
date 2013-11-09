@@ -60,8 +60,7 @@
                  forControlEvents:UIControlEventValueChanged];
     self.refreshControl = refresh;
     
-    //get location
-    [self updateTable];
+    
     
     //no results label
     nomatchesView = [[UIView alloc] initWithFrame:self.view.frame];
@@ -77,16 +76,15 @@
     matchesLabel.backgroundColor = [UIColor clearColor];
     matchesLabel.textAlignment =  NSTextAlignmentCenter;
     
-    //Here is the text for when there are no results
-    matchesLabel.text = @"Time to go home :-(";
-    
-    
-    nomatchesView.hidden = YES;
-    [nomatchesView addSubview:matchesLabel];
+ 
+        matchesLabel.text = @"Time to go home :-(";
+        nomatchesView.hidden = YES;
+        [nomatchesView addSubview:matchesLabel];
     [self.tableView insertSubview:nomatchesView belowSubview:self.tableView];
     
     //[self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-
+    //get location
+    [self updateTable];
 }
 
 //get distance on the site
@@ -149,16 +147,28 @@
     [locationManager setDelegate:self];
     [locationManager startUpdatingLocation];
     
-    self.storeData = [[StoreData alloc] initParserWithDelegate:self];
+    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied
+        ||[CLLocationManager authorizationStatus]== kCLAuthorizationStatusNotDetermined) {
+        matchesLabel.text = @"Please enable location services :-p";
+        nomatchesView.hidden = NO;
+        //stop loading
+        [[AppDelegate sharedAppDelegate] hideLoadingView];
+    }
+    else
+    {
+        nomatchesView.hidden = YES;
+        self.storeData = [[StoreData alloc] initParserWithDelegate:self];
+        
+        latitude = locationManager.location.coordinate.latitude;
+        lontitude = locationManager.location.coordinate.longitude;
+        
+        NSString *latlon=[NSString stringWithFormat:@"%f,%f",latitude,lontitude];
+        NSLog(@"lat lon %@",latlon);
+        [self.storeData getParserRequest:latlon];
+    }
     
-    
-    latitude = locationManager.location.coordinate.latitude;
-    lontitude = locationManager.location.coordinate.longitude;
-    
-    NSString *latlon=[NSString stringWithFormat:@"%f,%f",latitude,lontitude];
-    
-    [self.storeData getParserRequest:latlon];
-    [self.tableView reloadData];
+
+
     [self.refreshControl endRefreshing];
 }
 
@@ -269,7 +279,6 @@
     
     NSURL *url = [NSURL URLWithString:_storeElements.PictureUrl];
     detailViewController.imageView.imageURL=url;
-    
            detailViewController.storeElements = _storeElements;
     [self.navigationController pushViewController:detailViewController animated:YES];
 
@@ -289,10 +298,7 @@
         
     }else if (status == kCLAuthorizationStatusDenied) {
         
-         matchesLabel.text = @"Please enable location services :-p";
-        nomatchesView.hidden=NO;
-        self.storeData =nil;
-        [self.tableView reloadData];
+        [self updateTable];
     }
     else if (status == kCLAuthorizationStatusAuthorized) {
         nomatchesView.hidden=YES;
