@@ -68,7 +68,7 @@
     
     matchesLabel = [[UILabel alloc] initWithFrame:CGRectMake(10,80,300,320)];
     matchesLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:16];
-    matchesLabel.numberOfLines = 2;
+    matchesLabel.numberOfLines = 5;
     matchesLabel.lineBreakMode = NSLineBreakByWordWrapping;
     matchesLabel.shadowColor = [UIColor lightTextColor];
     matchesLabel.textColor = [UIColor darkGrayColor];
@@ -149,7 +149,7 @@
     
     if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied
         ||[CLLocationManager authorizationStatus]== kCLAuthorizationStatusNotDetermined) {
-        matchesLabel.text = @"Please enable location services for this app in your iPhone's Settings.";
+        matchesLabel.text = @"Don't you want another drink? \nCome on, enable the location services for this app! :-O\n\nThen pull down to try again.";
         nomatchesView.hidden = NO;
         //stop loading
         [[AppDelegate sharedAppDelegate] hideLoadingView];
