@@ -149,7 +149,7 @@
     
     if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied
         ||[CLLocationManager authorizationStatus]== kCLAuthorizationStatusNotDetermined) {
-        matchesLabel.text = @"Please enable location services :-p";
+        matchesLabel.text = @"Please enable location services for this app in your iPhone's Settings.";
         nomatchesView.hidden = NO;
         //stop loading
         [[AppDelegate sharedAppDelegate] hideLoadingView];
@@ -294,17 +294,18 @@
 -(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     
     if (status == kCLAuthorizationStatusNotDetermined) {
-        
+        NSLog(@"changed status kCLAuthorizationStatusNotDetermined");
         
     }else if (status == kCLAuthorizationStatusDenied) {
-        
+        NSLog(@"changed status kCLAuthorizationStatusDenied");
         [self updateTable];
     }
     else if (status == kCLAuthorizationStatusAuthorized) {
+        NSLog(@"changed status kCLAuthorizationStatusAuthorized");
         nomatchesView.hidden=YES;
         [self updateTable];
     } else {
-        
+        NSLog(@"changed status");
     }
 }
 
