@@ -114,11 +114,11 @@
      
     refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Refreshing data..."];
    
-//      //get new geo location
-//     locationManager = [[CLLocationManager alloc] init];
-//     latitude = locationManager.location.coordinate.latitude;
-//     lontitude = locationManager.location.coordinate.longitude;
-//     
+      //get new geo location
+     locationManager = [[CLLocationManager alloc] init];
+     latitude = locationManager.location.coordinate.latitude;
+     lontitude = locationManager.location.coordinate.longitude;
+//
 //    self.storeData = [[StoreData alloc] initParserWithDelegate:self];
 
      [self performSelector:@selector(updateTable) withObject:nil afterDelay:1.0];
@@ -149,6 +149,10 @@
     
     if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied
         ||[CLLocationManager authorizationStatus]== kCLAuthorizationStatusNotDetermined) {
+        
+        self.storeArray = nil;
+        
+        [self.tableView reloadData];
         matchesLabel.text = @"Don't you want another drink? \nCome on, enable the location services for this app! :-O\n\nThen pull down to try again.";
         nomatchesView.hidden = NO;
         //stop loading
